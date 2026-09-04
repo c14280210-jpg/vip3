@@ -34,7 +34,7 @@
             max-width: 100%;
         }
 
-        /* ===== HEADER (повне меню) ===== */
+        /* ===== HEADER ===== */
         .site-header {
             background: #fff;
             border-bottom: 1px solid rgba(0, 0, 0, 0.04);
@@ -182,7 +182,7 @@
             border-radius: 8px;
         }
 
-        /* ===== КАТАЛОГ (категорії) ===== */
+        /* ===== КАТАЛОГ ===== */
         .catalog {
             padding: 60px 20px;
             background: #f8f6f4;
@@ -262,7 +262,7 @@
             max-width: 460px;
         }
 
-        /* ===== ПРОДУКТ У ДЕТАЛЯХ (як Have a Rest) ===== */
+        /* ===== ПРОДУКТ У ДЕТАЛЯХ ===== */
         .product-details {
             padding: 80px 20px;
             background: #f8f6f4;
@@ -438,6 +438,106 @@
             font-size: 0.85rem;
         }
 
+        /* ===== ТОВАРИ (з кольорами) ===== */
+        .products-block {
+            padding: 60px 20px;
+            max-width: 1280px;
+            margin: 0 auto;
+        }
+        .products-block h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.4rem;
+            font-weight: 600;
+            color: #003057;
+            text-align: center;
+            margin-bottom: 8px;
+        }
+        .products-block h2 span {
+            color: #d4a843;
+        }
+        .products-block .sub {
+            text-align: center;
+            font-weight: 300;
+            color: #777;
+            margin-bottom: 32px;
+        }
+        .products-block .grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+        .products-block .grid .item {
+            background: #fff;
+            border-radius: 4px;
+            overflow: hidden;
+            transition: transform 0.3s;
+            border: 1px solid rgba(0, 0, 0, 0.02);
+        }
+        .products-block .grid .item:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.02);
+        }
+        .products-block .grid .item img {
+            width: 100%;
+            aspect-ratio: 3/4;
+            object-fit: cover;
+        }
+        .products-block .grid .item .info {
+            padding: 16px 16px 20px;
+        }
+        .products-block .grid .item .info .tag {
+            font-size: 0.6rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: #d4a843;
+        }
+        .products-block .grid .item .info h4 {
+            font-weight: 600;
+            color: #003057;
+            font-size: 1rem;
+            margin: 4px 0 6px;
+        }
+        .products-block .grid .item .info .price {
+            font-weight: 700;
+            font-size: 1.1rem;
+            color: #003057;
+        }
+        .products-block .grid .item .info .price del {
+            color: #bbb;
+            font-weight: 300;
+            margin-right: 8px;
+            font-size: 0.9rem;
+        }
+        /* Кольори (як на Have a Rest) */
+        .products-block .grid .item .colors {
+            display: flex;
+            gap: 6px;
+            margin-top: 10px;
+        }
+        .products-block .grid .item .colors span {
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            border: 1px solid #e0e0e0;
+            cursor: pointer;
+            transition: transform 0.2s;
+            display: inline-block;
+        }
+        .products-block .grid .item .colors span:hover {
+            transform: scale(1.15);
+        }
+        .products-block .grid .item .info .sale-tag {
+            background: #c0392b;
+            color: #fff;
+            padding: 2px 12px;
+            border-radius: 20px;
+            font-size: 0.7rem;
+            font-weight: 600;
+            display: inline-block;
+            margin-top: 4px;
+        }
+
         /* ===== КОЛЕКЦІЇ ===== */
         .collections {
             padding: 60px 20px;
@@ -534,90 +634,7 @@
             transform: scale(1.02);
         }
 
-        /* ===== НОВИНКИ / BESTSELLERS / SALE ===== */
-        .products-block {
-            padding: 60px 20px;
-            max-width: 1280px;
-            margin: 0 auto;
-        }
-        .products-block h2 {
-            font-family: 'Playfair Display', serif;
-            font-size: 2.4rem;
-            font-weight: 600;
-            color: #003057;
-            text-align: center;
-            margin-bottom: 8px;
-        }
-        .products-block h2 span {
-            color: #d4a843;
-        }
-        .products-block .sub {
-            text-align: center;
-            font-weight: 300;
-            color: #777;
-            margin-bottom: 32px;
-        }
-        .products-block .grid {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 20px;
-        }
-        .products-block .grid .item {
-            background: #fff;
-            border-radius: 4px;
-            overflow: hidden;
-            transition: transform 0.3s;
-            border: 1px solid rgba(0, 0, 0, 0.02);
-        }
-        .products-block .grid .item:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.02);
-        }
-        .products-block .grid .item img {
-            width: 100%;
-            aspect-ratio: 3/4;
-            object-fit: cover;
-        }
-        .products-block .grid .item .info {
-            padding: 16px 16px 20px;
-        }
-        .products-block .grid .item .info .tag {
-            font-size: 0.6rem;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            color: #d4a843;
-        }
-        .products-block .grid .item .info h4 {
-            font-weight: 600;
-            color: #003057;
-            font-size: 1rem;
-            margin: 4px 0 6px;
-        }
-        .products-block .grid .item .info .price {
-            font-weight: 700;
-            font-size: 1.1rem;
-            color: #003057;
-        }
-        .products-block .grid .item .info .price del {
-            color: #bbb;
-            font-weight: 300;
-            margin-right: 8px;
-            font-size: 0.9rem;
-        }
-
-        .products-block .grid .item .info .sale-tag {
-            background: #c0392b;
-            color: #fff;
-            padding: 2px 12px;
-            border-radius: 20px;
-            font-size: 0.7rem;
-            font-weight: 600;
-            display: inline-block;
-            margin-top: 4px;
-        }
-
-        /* ===== ПРО БРЕНД (з виробництвом) ===== */
+        /* ===== ПРО БРЕНД ===== */
         .about-brand {
             padding: 80px 20px;
             background: #f8f6f4;
@@ -665,7 +682,7 @@
             border-radius: 4px;
         }
 
-        /* ===== ЯК МИ СТВОРЮЄМО ===== */
+        /* ===== ПРОЦЕС ===== */
         .process {
             padding: 60px 20px;
             max-width: 1280px;
@@ -838,7 +855,7 @@
             font-size: 0.9rem;
         }
 
-        /* ===== ВІДГУКИ (великі) ===== */
+        /* ===== ВІДГУКИ ===== */
         .reviews-block {
             padding: 60px 20px;
             max-width: 1280px;
@@ -1122,7 +1139,7 @@
                 grid-template-columns: 1fr;
             }
             .products-block .grid {
-                grid-template-columns: 1fr;
+                grid-template-columns: 1fr 1fr;
             }
             .footer-inner {
                 grid-template-columns: 1fr;
@@ -1158,6 +1175,9 @@
             }
             .social-block .grid {
                 grid-template-columns: 1fr 1fr;
+            }
+            .products-block .grid {
+                grid-template-columns: 1fr;
             }
             .hero .text h1 {
                 font-size: 2.2rem;
@@ -1294,6 +1314,185 @@
         </div>
     </section>
 
+    <!-- ===== НОВИНКИ (з кольорами) ===== -->
+    <section class="products-block">
+        <h2>Новинки <span>2026</span></h2>
+        <p class="sub">Свіжі моделі, які вже доступні</p>
+        <div class="grid">
+            <div class="item">
+                <img src="https://images.unsplash.com/photo-1607552384479-9f2f21dd4d78?w=400&q=80" alt="Новинка">
+                <div class="info">
+                    <div class="tag">NEW</div>
+                    <h4>Валіза 55 см</h4>
+                    <div class="price">4 290 ₴</div>
+                    <div class="colors">
+                        <span style="background:#003057;"></span>
+                        <span style="background:#d4a843;"></span>
+                        <span style="background:#1a1a1a;"></span>
+                        <span style="background:#f5f5f5;"></span>
+                    </div>
+                </div>
+            </div>
+            <div class="item">
+                <img src="https://images.unsplash.com/photo-1566150905458-1bf1fc113f0d?w=400&q=80" alt="Новинка">
+                <div class="info">
+                    <div class="tag">NEW</div>
+                    <h4>Сумка Tote</h4>
+                    <div class="price">4 890 ₴</div>
+                    <div class="colors">
+                        <span style="background:#003057;"></span>
+                        <span style="background:#d4a843;"></span>
+                        <span style="background:#8B4513;"></span>
+                    </div>
+                </div>
+            </div>
+            <div class="item">
+                <img src="https://images.unsplash.com/photo-1601924971179-d6f38f24ce3d?w=400&q=80" alt="Новинка">
+                <div class="info">
+                    <div class="tag">NEW</div>
+                    <h4>Гаманець</h4>
+                    <div class="price">1 290 ₴</div>
+                    <div class="colors">
+                        <span style="background:#003057;"></span>
+                        <span style="background:#1a1a1a;"></span>
+                        <span style="background:#8B4513;"></span>
+                    </div>
+                </div>
+            </div>
+            <div class="item">
+                <img src="https://images.unsplash.com/photo-1584917865442-de89df76afd3?w=400&q=80" alt="Новинка">
+                <div class="info">
+                    <div class="tag">NEW</div>
+                    <h4>Рюкзак City</h4>
+                    <div class="price">5 690 ₴</div>
+                    <div class="colors">
+                        <span style="background:#003057;"></span>
+                        <span style="background:#d4a843;"></span>
+                        <span style="background:#1a1a1a;"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== BESTSELLERS (з кольорами) ===== -->
+    <section class="products-block" style="background:#f8f6f4; padding:60px 20px; max-width:100%;">
+        <div style="max-width:1280px; margin:0 auto;">
+            <h2>Хіти <span>продажів</span></h2>
+            <p class="sub">Найпопулярніші моделі серед наших клієнтів</p>
+            <div class="grid">
+                <div class="item">
+                    <img src="https://images.unsplash.com/photo-1544441893-675973e31985?w=400&q=80" alt="Хіт">
+                    <div class="info">
+                        <h4>Валіза 75 см</h4>
+                        <div class="price">6 990 ₴</div>
+                        <div class="colors">
+                            <span style="background:#003057;"></span>
+                            <span style="background:#d4a843;"></span>
+                            <span style="background:#1a1a1a;"></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="item">
+                    <img src="https://images.unsplash.com/photo-1601758063897-1d9b4e4f13c0?w=400&q=80" alt="Хіт">
+                    <div class="info">
+                        <h4>Портмоне</h4>
+                        <div class="price">890 ₴</div>
+                        <div class="colors">
+                            <span style="background:#003057;"></span>
+                            <span style="background:#1a1a1a;"></span>
+                            <span style="background:#8B4513;"></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="item">
+                    <img src="https://images.unsplash.com/photo-1559588358-2f9bd1d49c22?w=400&q=80" alt="Хіт">
+                    <div class="info">
+                        <h4>Валіза ручна</h4>
+                        <div class="price">3 990 ₴</div>
+                        <div class="colors">
+                            <span style="background:#003057;"></span>
+                            <span style="background:#d4a843;"></span>
+                            <span style="background:#f5f5f5;"></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="item">
+                    <img src="https://images.unsplash.com/photo-1566150905458-1bf1fc113f0d?w=400&q=80" alt="Хіт">
+                    <div class="info">
+                        <h4>Сумка Crossbody</h4>
+                        <div class="price">3 890 ₴</div>
+                        <div class="colors">
+                            <span style="background:#003057;"></span>
+                            <span style="background:#d4a843;"></span>
+                            <span style="background:#8B4513;"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== SALE (з кольорами) ===== -->
+    <section class="products-block">
+        <h2>Розпродаж <span>🔥</span></h2>
+        <p class="sub">Спеціальні ціни на вибрані моделі</p>
+        <div class="grid">
+            <div class="item">
+                <img src="https://images.unsplash.com/photo-1559588358-2f9bd1d49c22?w=400&q=80" alt="Sale">
+                <div class="info">
+                    <div class="tag">SALE</div>
+                    <h4>Валіза 55 см</h4>
+                    <div class="price"><del>4 290 ₴</del> 3 432 ₴</div>
+                    <div class="sale-tag">-20%</div>
+                    <div class="colors">
+                        <span style="background:#003057;"></span>
+                        <span style="background:#1a1a1a;"></span>
+                    </div>
+                </div>
+            </div>
+            <div class="item">
+                <img src="https://images.unsplash.com/photo-1601758063897-1d9b4e4f13c0?w=400&q=80" alt="Sale">
+                <div class="info">
+                    <div class="tag">SALE</div>
+                    <h4>Портмоне</h4>
+                    <div class="price"><del>890 ₴</del> 712 ₴</div>
+                    <div class="sale-tag">-20%</div>
+                    <div class="colors">
+                        <span style="background:#003057;"></span>
+                        <span style="background:#8B4513;"></span>
+                    </div>
+                </div>
+            </div>
+            <div class="item">
+                <img src="https://images.unsplash.com/photo-1566150905458-1bf1fc113f0d?w=400&q=80" alt="Sale">
+                <div class="info">
+                    <div class="tag">SALE</div>
+                    <h4>Сумка Tote</h4>
+                    <div class="price"><del>4 890 ₴</del> 3 912 ₴</div>
+                    <div class="sale-tag">-20%</div>
+                    <div class="colors">
+                        <span style="background:#003057;"></span>
+                        <span style="background:#d4a843;"></span>
+                    </div>
+                </div>
+            </div>
+            <div class="item">
+                <img src="https://images.unsplash.com/photo-1601924971179-d6f38f24ce3d?w=400&q=80" alt="Sale">
+                <div class="info">
+                    <div class="tag">SALE</div>
+                    <h4>Гаманець</h4>
+                    <div class="price"><del>1 290 ₴</del> 1 032 ₴</div>
+                    <div class="sale-tag">-20%</div>
+                    <div class="colors">
+                        <span style="background:#003057;"></span>
+                        <span style="background:#1a1a1a;"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- ===== КОЛЕКЦІЇ ===== -->
     <section class="collections">
         <h2>Наші <span>колекції</span></h2>
@@ -1327,100 +1526,6 @@
         </div>
     </section>
 
-    <!-- ===== НОВИНКИ ===== -->
-    <section class="products-block">
-        <h2>Новинки <span>2026</span></h2>
-        <p class="sub">Свіжі моделі, які вже доступні</p>
-        <div class="grid">
-            <div class="item">
-                <img src="https://images.unsplash.com/photo-1607552384479-9f2f21dd4d78?w=400&q=80" alt="Новинка">
-                <div class="info"><div class="tag">NEW</div><h4>Валіза 55 см</h4><div class="price">4 290 ₴</div></div>
-            </div>
-            <div class="item">
-                <img src="https://images.unsplash.com/photo-1566150905458-1bf1fc113f0d?w=400&q=80" alt="Новинка">
-                <div class="info"><div class="tag">NEW</div><h4>Сумка Tote</h4><div class="price">4 890 ₴</div></div>
-            </div>
-            <div class="item">
-                <img src="https://images.unsplash.com/photo-1601924971179-d6f38f24ce3d?w=400&q=80" alt="Новинка">
-                <div class="info"><div class="tag">NEW</div><h4>Гаманець</h4><div class="price">1 290 ₴</div></div>
-            </div>
-            <div class="item">
-                <img src="https://images.unsplash.com/photo-1584917865442-de89df76afd3?w=400&q=80" alt="Новинка">
-                <div class="info"><div class="tag">NEW</div><h4>Рюкзак City</h4><div class="price">5 690 ₴</div></div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ===== BESTSELLERS ===== -->
-    <section class="products-block" style="background:#f8f6f4; padding:60px 20px; max-width:100%;">
-        <div style="max-width:1280px; margin:0 auto;">
-            <h2>Хіти <span>продажів</span></h2>
-            <p class="sub">Найпопулярніші моделі серед наших клієнтів</p>
-            <div class="grid">
-                <div class="item">
-                    <img src="https://images.unsplash.com/photo-1544441893-675973e31985?w=400&q=80" alt="Хіт">
-                    <div class="info"><h4>Валіза 75 см</h4><div class="price">6 990 ₴</div></div>
-                </div>
-                <div class="item">
-                    <img src="https://images.unsplash.com/photo-1601758063897-1d9b4e4f13c0?w=400&q=80" alt="Хіт">
-                    <div class="info"><h4>Портмоне</h4><div class="price">890 ₴</div></div>
-                </div>
-                <div class="item">
-                    <img src="https://images.unsplash.com/photo-1559588358-2f9bd1d49c22?w=400&q=80" alt="Хіт">
-                    <div class="info"><h4>Валіза ручна</h4><div class="price">3 990 ₴</div></div>
-                </div>
-                <div class="item">
-                    <img src="https://images.unsplash.com/photo-1566150905458-1bf1fc113f0d?w=400&q=80" alt="Хіт">
-                    <div class="info"><h4>Сумка Crossbody</h4><div class="price">3 890 ₴</div></div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ===== SALE ===== -->
-    <section class="products-block">
-        <h2>Розпродаж <span>🔥</span></h2>
-        <p class="sub">Спеціальні ціни на вибрані моделі</p>
-        <div class="grid">
-            <div class="item">
-                <img src="https://images.unsplash.com/photo-1559588358-2f9bd1d49c22?w=400&q=80" alt="Sale">
-                <div class="info">
-                    <div class="tag">SALE</div>
-                    <h4>Валіза 55 см</h4>
-                    <div class="price"><del>4 290 ₴</del> 3 432 ₴</div>
-                    <div class="sale-tag">-20%</div>
-                </div>
-            </div>
-            <div class="item">
-                <img src="https://images.unsplash.com/photo-1601758063897-1d9b4e4f13c0?w=400&q=80" alt="Sale">
-                <div class="info">
-                    <div class="tag">SALE</div>
-                    <h4>Портмоне</h4>
-                    <div class="price"><del>890 ₴</del> 712 ₴</div>
-                    <div class="sale-tag">-20%</div>
-                </div>
-            </div>
-            <div class="item">
-                <img src="https://images.unsplash.com/photo-1566150905458-1bf1fc113f0d?w=400&q=80" alt="Sale">
-                <div class="info">
-                    <div class="tag">SALE</div>
-                    <h4>Сумка Tote</h4>
-                    <div class="price"><del>4 890 ₴</del> 3 912 ₴</div>
-                    <div class="sale-tag">-20%</div>
-                </div>
-            </div>
-            <div class="item">
-                <img src="https://images.unsplash.com/photo-1601924971179-d6f38f24ce3d?w=400&q=80" alt="Sale">
-                <div class="info">
-                    <div class="tag">SALE</div>
-                    <h4>Гаманець</h4>
-                    <div class="price"><del>1 290 ₴</del> 1 032 ₴</div>
-                    <div class="sale-tag">-20%</div>
-                </div>
-            </div>
-        </div>
-    </section>
-
     <!-- ===== ПРО VIP COLLECTION ===== -->
     <section class="about-brand">
         <div class="inner">
@@ -1434,7 +1539,7 @@
         </div>
     </section>
 
-    <!-- ===== ЯК МИ СТВОРЮЄМО ===== -->
+    <!-- ===== ПРОЦЕС ===== -->
     <section class="process">
         <h2>Як ми <span>створюємо</span></h2>
         <p class="sub">Від ідеї до готового виробу</p>
@@ -1476,7 +1581,7 @@
         </div>
     </section>
 
-    <!-- ===== ВІДГУКИ (великі) ===== -->
+    <!-- ===== ВІДГУКИ ===== -->
     <section class="reviews-block">
         <h2>Відгуки <span>наших клієнтів</span></h2>
         <div class="grid">
@@ -1624,11 +1729,11 @@
                 this.reset();
             });
 
-            // ---- Всі кнопки "Детальніше" ----
-            document.querySelectorAll('.btn').forEach(btn => {
-                btn.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    alert('🔗 Тут буде перехід на відповідну сторінку');
+            // ---- Кліки на кольори ----
+            document.querySelectorAll('.colors span').forEach(color => {
+                color.addEventListener('click', function(e) {
+                    e.stopPropagation();
+                    alert('🎨 Ви обрали колір: ' + this.style.background);
                 });
             });
 
