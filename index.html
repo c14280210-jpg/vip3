@@ -65,7 +65,7 @@
         .header-inner .nav {
             display: flex;
             flex-wrap: wrap;
-            gap: 20px;
+            gap: 16px;
             font-size: 0.8rem;
             font-weight: 500;
             letter-spacing: 0.5px;
@@ -182,7 +182,7 @@
             border-radius: 8px;
         }
 
-        /* ===== КАТАЛОГ ===== */
+        /* ===== КАТАЛОГ (основні категорії) ===== */
         .catalog {
             padding: 60px 20px;
             background: #f8f6f4;
@@ -219,6 +219,57 @@
             color: #003057;
         }
 
+        /* ===== КАТЕГОРІЇ 2-ГО РІВНЯ (ВАЛІЗИ) ===== */
+        .subcategories {
+            padding: 60px 20px;
+            max-width: 1280px;
+            margin: 0 auto;
+            border-bottom: 1px solid #e8e4de;
+        }
+        .subcategories h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            font-weight: 600;
+            color: #003057;
+            margin-bottom: 8px;
+        }
+        .subcategories h2 span {
+            color: #d4a843;
+        }
+        .subcategories .sub {
+            font-weight: 300;
+            color: #777;
+            margin-bottom: 24px;
+            font-size: 0.95rem;
+        }
+        .subcategories .grid {
+            display: grid;
+            grid-template-columns: repeat(6, 1fr);
+            gap: 16px;
+        }
+        .subcategories .grid .item {
+            text-align: center;
+            padding: 16px 10px;
+            background: #f8f6f4;
+            border-radius: 4px;
+            transition: all 0.3s;
+            cursor: pointer;
+        }
+        .subcategories .grid .item:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.02);
+        }
+        .subcategories .grid .item .icon {
+            font-size: 2rem;
+            display: block;
+            margin-bottom: 6px;
+        }
+        .subcategories .grid .item h4 {
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: #003057;
+        }
+
         /* ===== FEATURED ===== */
         .featured {
             padding: 80px 20px;
@@ -228,6 +279,7 @@
             flex-wrap: wrap;
             align-items: center;
             gap: 50px;
+            border-bottom: 1px solid #e8e4de;
         }
         .featured .image {
             flex: 1 1 45%;
@@ -262,187 +314,15 @@
             max-width: 460px;
         }
 
-        /* ===== ПРОДУКТ У ДЕТАЛЯХ ===== */
-        .product-details {
-            padding: 80px 20px;
-            background: #f8f6f4;
-            border-top: 1px solid #e8e4de;
-            border-bottom: 1px solid #e8e4de;
-        }
-        .product-details .inner {
-            max-width: 1280px;
-            margin: 0 auto;
-        }
-        .product-details .inner h2 {
-            font-family: 'Playfair Display', serif;
-            font-size: 2.6rem;
-            font-weight: 600;
-            color: #003057;
-            text-align: center;
-            margin-bottom: 8px;
-        }
-        .product-details .inner h2 span {
-            color: #d4a843;
-        }
-        .product-details .inner .sub {
-            text-align: center;
-            font-weight: 300;
-            color: #777;
-            margin-bottom: 40px;
-        }
-        .product-details .grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 24px;
-        }
-        .product-details .grid .item {
-            background: #fff;
-            padding: 30px 24px;
-            border-radius: 4px;
-            border-left: 3px solid #d4a843;
-            transition: transform 0.3s;
-        }
-        .product-details .grid .item:hover {
-            transform: translateY(-4px);
-        }
-        .product-details .grid .item .num {
-            font-family: 'Playfair Display', serif;
-            font-size: 2.2rem;
-            font-weight: 700;
-            color: #d4a843;
-            opacity: 0.3;
-        }
-        .product-details .grid .item h4 {
-            font-size: 1.1rem;
-            font-weight: 600;
-            color: #003057;
-            margin: 4px 0 8px;
-        }
-        .product-details .grid .item p {
-            font-weight: 300;
-            color: #555;
-            font-size: 0.95rem;
-            line-height: 1.6;
-        }
-
-        /* ===== РОЗМІРИ ВАЛІЗ ===== */
-        .sizes {
-            padding: 60px 20px;
-            max-width: 1280px;
-            margin: 0 auto;
-        }
-        .sizes h2 {
-            font-family: 'Playfair Display', serif;
-            font-size: 2.4rem;
-            font-weight: 600;
-            color: #003057;
-            text-align: center;
-            margin-bottom: 8px;
-        }
-        .sizes h2 span {
-            color: #d4a843;
-        }
-        .sizes .sub {
-            text-align: center;
-            font-weight: 300;
-            color: #777;
-            margin-bottom: 32px;
-        }
-        .sizes .grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 24px;
-        }
-        .sizes .grid .item {
-            text-align: center;
-            padding: 24px;
-            background: #f8f6f4;
-            border-radius: 4px;
-            transition: all 0.3s;
-        }
-        .sizes .grid .item:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.02);
-        }
-        .sizes .grid .item .icon {
-            font-size: 3rem;
-            display: block;
-            margin-bottom: 8px;
-        }
-        .sizes .grid .item h4 {
-            font-weight: 600;
-            color: #003057;
-            font-size: 1.4rem;
-        }
-        .sizes .grid .item p {
-            font-weight: 300;
-            color: #777;
-        }
-
-        /* ===== АКСЕСУАРИ ===== */
-        .accessories {
-            padding: 60px 20px;
-            background: #f8f6f4;
-            border-top: 1px solid #e8e4de;
-            border-bottom: 1px solid #e8e4de;
-        }
-        .accessories .inner {
-            max-width: 1280px;
-            margin: 0 auto;
-        }
-        .accessories .inner h2 {
-            font-family: 'Playfair Display', serif;
-            font-size: 2.4rem;
-            font-weight: 600;
-            color: #003057;
-            text-align: center;
-            margin-bottom: 8px;
-        }
-        .accessories .inner h2 span {
-            color: #d4a843;
-        }
-        .accessories .inner .sub {
-            text-align: center;
-            font-weight: 300;
-            color: #777;
-            margin-bottom: 32px;
-        }
-        .accessories .grid {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 20px;
-        }
-        .accessories .grid .item {
-            background: #fff;
-            padding: 20px 16px;
-            border-radius: 4px;
-            text-align: center;
-            transition: transform 0.3s;
-        }
-        .accessories .grid .item:hover {
-            transform: translateY(-4px);
-        }
-        .accessories .grid .item .icon {
-            font-size: 2.6rem;
-            display: block;
-            margin-bottom: 8px;
-        }
-        .accessories .grid .item h4 {
-            font-weight: 600;
-            color: #003057;
-            font-size: 1rem;
-        }
-        .accessories .grid .item p {
-            font-weight: 300;
-            color: #777;
-            font-size: 0.85rem;
-        }
-
         /* ===== ТОВАРИ (з кольорами) ===== */
         .products-block {
             padding: 60px 20px;
             max-width: 1280px;
             margin: 0 auto;
+            border-bottom: 1px solid #e8e4de;
+        }
+        .products-block:last-of-type {
+            border-bottom: none;
         }
         .products-block h2 {
             font-family: 'Playfair Display', serif;
@@ -509,11 +389,11 @@
             margin-right: 8px;
             font-size: 0.9rem;
         }
-        /* Кольори (як на Have a Rest) */
         .products-block .grid .item .colors {
             display: flex;
             gap: 6px;
             margin-top: 10px;
+            flex-wrap: wrap;
         }
         .products-block .grid .item .colors span {
             width: 20px;
@@ -538,64 +418,7 @@
             margin-top: 4px;
         }
 
-        /* ===== КОЛЕКЦІЇ ===== */
-        .collections {
-            padding: 60px 20px;
-            max-width: 1280px;
-            margin: 0 auto;
-        }
-        .collections h2 {
-            font-family: 'Playfair Display', serif;
-            font-size: 2.4rem;
-            font-weight: 600;
-            color: #003057;
-            text-align: center;
-            margin-bottom: 8px;
-        }
-        .collections h2 span {
-            color: #d4a843;
-        }
-        .collections .sub {
-            text-align: center;
-            font-weight: 300;
-            color: #777;
-            margin-bottom: 32px;
-        }
-        .collections .grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 24px;
-        }
-        .collections .grid .item {
-            border-radius: 4px;
-            overflow: hidden;
-            background: #f8f6f4;
-            transition: transform 0.3s;
-        }
-        .collections .grid .item:hover {
-            transform: translateY(-4px);
-        }
-        .collections .grid .item img {
-            width: 100%;
-            aspect-ratio: 4/3;
-            object-fit: cover;
-        }
-        .collections .grid .item .info {
-            padding: 16px 20px 20px;
-        }
-        .collections .grid .item .info h4 {
-            font-weight: 600;
-            color: #003057;
-            font-size: 1.2rem;
-        }
-        .collections .grid .item .info p {
-            font-weight: 300;
-            color: #555;
-            font-size: 0.9rem;
-            margin-top: 4px;
-        }
-
-        /* ===== PHOTO STORY ===== */
+        /* ===== ФОТОІСТОРІЯ ===== */
         .photostory {
             padding: 60px 20px;
             background: #f8f6f4;
@@ -1078,13 +901,10 @@
             .catalog .grid {
                 grid-template-columns: repeat(3, 1fr);
             }
-            .product-details .grid {
-                grid-template-columns: repeat(2, 1fr);
+            .subcategories .grid {
+                grid-template-columns: repeat(3, 1fr);
             }
             .products-block .grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-            .collections .grid {
                 grid-template-columns: repeat(2, 1fr);
             }
             .photostory .grid {
@@ -1114,32 +934,20 @@
             .catalog .grid {
                 grid-template-columns: repeat(2, 1fr);
             }
-            .product-details .grid {
-                grid-template-columns: 1fr;
-            }
-            .sizes .grid {
-                grid-template-columns: 1fr;
-            }
-            .accessories .grid {
+            .subcategories .grid {
                 grid-template-columns: repeat(2, 1fr);
-            }
-            .collections .grid {
-                grid-template-columns: 1fr;
-            }
-            .process .grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-            .delivery .grid {
-                grid-template-columns: 1fr;
-            }
-            .faq .grid {
-                grid-template-columns: 1fr;
-            }
-            .reviews-block .grid {
-                grid-template-columns: 1fr;
             }
             .products-block .grid {
                 grid-template-columns: 1fr 1fr;
+            }
+            .photostory .grid {
+                grid-template-columns: 1fr 1fr;
+            }
+            .social-block .grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .reviews-block .grid {
+                grid-template-columns: 1fr;
             }
             .footer-inner {
                 grid-template-columns: 1fr;
@@ -1152,22 +960,16 @@
             .footer-bottom a {
                 margin: 0 10px;
             }
-            .photostory .grid {
-                grid-template-columns: 1fr 1fr;
-            }
-            .social-block .grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
         }
 
         @media (max-width: 600px) {
             .catalog .grid {
                 grid-template-columns: 1fr 1fr;
             }
-            .accessories .grid {
+            .subcategories .grid {
                 grid-template-columns: 1fr 1fr;
             }
-            .process .grid {
+            .products-block .grid {
                 grid-template-columns: 1fr;
             }
             .photostory .grid {
@@ -1176,16 +978,10 @@
             .social-block .grid {
                 grid-template-columns: 1fr 1fr;
             }
-            .products-block .grid {
-                grid-template-columns: 1fr;
-            }
             .hero .text h1 {
                 font-size: 2.2rem;
             }
             .featured .text h2 {
-                font-size: 2rem;
-            }
-            .product-details .inner h2 {
                 font-size: 2rem;
             }
             .about-brand .inner .text h2 {
@@ -1213,14 +1009,12 @@
             <div class="logo">VIP<span>.</span></div>
             <button class="menu-toggle">☰</button>
             <nav class="nav">
-                <a href="#">Каталог</a>
-                <a href="#">Колекції</a>
+                <a href="#">Валізи</a>
+                <a href="#">Сумки та рюкзаки</a>
+                <a href="#">Галантерея</a>
                 <a href="#">Новинки</a>
-                <a href="#">Sale</a>
+                <a href="#">Розпродаж</a>
                 <a href="#">Про нас</a>
-                <a href="#">Доставка</a>
-                <a href="#">Гарантія</a>
-                <a href="#">FAQ</a>
                 <a href="#">Контакти</a>
             </nav>
             <div class="actions">
@@ -1251,14 +1045,41 @@
         <div class="image"></div>
     </section>
 
-    <!-- ===== КАТАЛОГ ===== -->
+    <!-- ===== ОСНОВНІ КАТЕГОРІЇ ===== -->
     <section class="catalog">
         <div class="grid">
             <div class="item"><span class="icon">🧳</span><h4>Валізи</h4></div>
-            <div class="item"><span class="icon">👜</span><h4>Сумки</h4></div>
-            <div class="item"><span class="icon">🎒</span><h4>Рюкзаки</h4></div>
+            <div class="item"><span class="icon">👜</span><h4>Сумки та рюкзаки</h4></div>
             <div class="item"><span class="icon">👛</span><h4>Галантерея</h4></div>
-            <div class="item"><span class="icon">🧴</span><h4>Аксесуари</h4></div>
+            <div class="item"><span class="icon">✨</span><h4>Новинки</h4></div>
+            <div class="item"><span class="icon">🔥</span><h4>Розпродаж</h4></div>
+        </div>
+    </section>
+
+    <!-- ===== ПІДКАТЕГОРІЇ: ВАЛІЗИ ===== -->
+    <section class="subcategories">
+        <h2>Валізи <span>за розміром</span></h2>
+        <p class="sub">Оберіть ідеальний розмір для вашої подорожі</p>
+        <div class="grid">
+            <div class="item"><span class="icon">🧳</span><h4>Великі валізи</h4></div>
+            <div class="item"><span class="icon">🧳</span><h4>Середні валізи</h4></div>
+            <div class="item"><span class="icon">🧳</span><h4>Маленькі валізи</h4></div>
+            <div class="item"><span class="icon">✈️</span><h4>Ручна поклажа</h4></div>
+            <div class="item"><span class="icon">📦</span><h4>Комплекти валіз</h4></div>
+            <div class="item"><span class="icon">🧴</span><h4>Дорожні аксесуари</h4></div>
+        </div>
+    </section>
+
+    <!-- ===== ПІДКАТЕГОРІЇ: СУМКИ ТА РЮКЗАКИ ===== -->
+    <section class="subcategories" style="border-bottom:1px solid #e8e4de;">
+        <h2>Сумки та <span>рюкзаки</span></h2>
+        <p class="sub">Для міста, роботи та подорожей</p>
+        <div class="grid">
+            <div class="item"><span class="icon">🛍️</span><h4>Дорожні сумки</h4></div>
+            <div class="item"><span class="icon">💻</span><h4>Сумки для ноутбука</h4></div>
+            <div class="item"><span class="icon">👝</span><h4>Сумки через плече</h4></div>
+            <div class="item"><span class="icon">🎒</span><h4>Сумки на пояс</h4></div>
+            <div class="item"><span class="icon">🎒</span><h4>Рюкзаки</h4></div>
         </div>
     </section>
 
@@ -1273,48 +1094,7 @@
         </div>
     </section>
 
-    <!-- ===== ПРОДУКТ У ДЕТАЛЯХ ===== -->
-    <section class="product-details">
-        <div class="inner">
-            <h2>Деталі <span>продукту</span></h2>
-            <p class="sub">Кожна особливість, яка робить VIP Collection унікальним</p>
-            <div class="grid">
-                <div class="item"><div class="num">01</div><h4>Матеріал</h4><p>Натуральна шкіра найвищої якості, яка з часом стає ще красивішою.</p></div>
-                <div class="item"><div class="num">02</div><h4>Фурнітура</h4><p>Італійська металева фурнітура, стійка до зношування та корозії.</p></div>
-                <div class="item"><div class="num">03</div><h4>Відділення</h4><p>Продумана внутрішня організація для зручного зберігання речей.</p></div>
-                <div class="item"><div class="num">04</div><h4>Замок</h4><p>Вбудований кодовий замок TSA для захисту вашого багажу.</p></div>
-                <div class="item"><div class="num">05</div><h4>Ручки</h4><p>Ергономічні ручки з натуральної шкіри для комфортного перенесення.</p></div>
-                <div class="item"><div class="num">06</div><h4>Колеса</h4><p>Безшумні колеса з поворотом на 360° для легкої маневреності.</p></div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ===== РОЗМІРИ ВАЛІЗ ===== -->
-    <section class="sizes">
-        <h2>Валізи за <span>розміром</span></h2>
-        <p class="sub">Оберіть ідеальний розмір для вашої подорожі</p>
-        <div class="grid">
-            <div class="item"><span class="icon">🧳</span><h4>S / Cabin</h4><p>Ручна поклажа до 55 см</p></div>
-            <div class="item"><span class="icon">🧳</span><h4>M / Medium</h4><p>Оптимальний для 3-7 днів</p></div>
-            <div class="item"><span class="icon">🧳</span><h4>L / Large</h4><p>Для тривалих подорожей 7+ днів</p></div>
-        </div>
-    </section>
-
-    <!-- ===== АКСЕСУАРИ ДЛЯ ПОДОРОЖІ ===== -->
-    <section class="accessories">
-        <div class="inner">
-            <h2>Аксесуари для <span>подорожей</span></h2>
-            <p class="sub">Все необхідне для комфортної подорожі</p>
-            <div class="grid">
-                <div class="item"><span class="icon">🛍️</span><h4>Дорожні сумки</h4><p>Місткі та стильні</p></div>
-                <div class="item"><span class="icon">🎒</span><h4>Рюкзаки</h4><p>Для міста та подорожей</p></div>
-                <div class="item"><span class="icon">📁</span><h4>Чохли</h4><p>Для документів та ноутбука</p></div>
-                <div class="item"><span class="icon">📂</span><h4>Органайзери</h4><p>Для речей та косметики</p></div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ===== НОВИНКИ (з кольорами) ===== -->
+    <!-- ===== НОВИНКИ ===== -->
     <section class="products-block">
         <h2>Новинки <span>2026</span></h2>
         <p class="sub">Свіжі моделі, які вже доступні</p>
@@ -1329,7 +1109,6 @@
                         <span style="background:#003057;"></span>
                         <span style="background:#d4a843;"></span>
                         <span style="background:#1a1a1a;"></span>
-                        <span style="background:#f5f5f5;"></span>
                     </div>
                 </div>
             </div>
@@ -1355,7 +1134,6 @@
                     <div class="colors">
                         <span style="background:#003057;"></span>
                         <span style="background:#1a1a1a;"></span>
-                        <span style="background:#8B4513;"></span>
                     </div>
                 </div>
             </div>
@@ -1375,7 +1153,23 @@
         </div>
     </section>
 
-    <!-- ===== BESTSELLERS (з кольорами) ===== -->
+    <!-- ===== ГАЛАНТЕРЕЯ ===== -->
+    <section class="subcategories" style="border-bottom:1px solid #e8e4de;">
+        <h2>Галантерея <span>та аксесуари</span></h2>
+        <p class="sub">Дрібні деталі, які створюють стиль</p>
+        <div class="grid">
+            <div class="item"><span class="icon">👛</span><h4>Гаманці</h4></div>
+            <div class="item"><span class="icon">📁</span><h4>Футляри для документів</h4></div>
+            <div class="item"><span class="icon">🔑</span><h4>Футляри для ключів</h4></div>
+            <div class="item"><span class="icon">👓</span><h4>Футляри для окулярів</h4></div>
+            <div class="item"><span class="icon">💍</span><h4>Футляри для біжутерії</h4></div>
+            <div class="item"><span class="icon">💄</span><h4>Футляри для помад</h4></div>
+            <div class="item"><span class="icon">💳</span><h4>Футляри для карток</h4></div>
+            <div class="item"><span class="icon">📓</span><h4>Блокноти</h4></div>
+        </div>
+    </section>
+
+    <!-- ===== BESTSELLERS ===== -->
     <section class="products-block" style="background:#f8f6f4; padding:60px 20px; max-width:100%;">
         <div style="max-width:1280px; margin:0 auto;">
             <h2>Хіти <span>продажів</span></h2>
@@ -1433,7 +1227,7 @@
         </div>
     </section>
 
-    <!-- ===== SALE (з кольорами) ===== -->
+    <!-- ===== РОЗПРОДАЖ ===== -->
     <section class="products-block">
         <h2>Розпродаж <span>🔥</span></h2>
         <p class="sub">Спеціальні ціни на вибрані моделі</p>
@@ -1493,27 +1287,7 @@
         </div>
     </section>
 
-    <!-- ===== КОЛЕКЦІЇ ===== -->
-    <section class="collections">
-        <h2>Наші <span>колекції</span></h2>
-        <p class="sub">Кожна колекція — це окрема історія</p>
-        <div class="grid">
-            <div class="item">
-                <img src="https://images.unsplash.com/photo-1544441893-675973e31985?w=400&q=80" alt="Колекція">
-                <div class="info"><h4>Classic Leather</h4><p>Вічна класика з натуральної шкіри. 2025</p></div>
-            </div>
-            <div class="item">
-                <img src="https://images.unsplash.com/photo-1607552384479-9f2f21dd4d78?w=400&q=80" alt="Колекція">
-                <div class="info"><h4>Travel Collection</h4><p>Спеціальна колекція для подорожей. 2026</p></div>
-            </div>
-            <div class="item">
-                <img src="https://images.unsplash.com/photo-1566150905458-1bf1fc113f0d?w=400&q=80" alt="Колекція">
-                <div class="info"><h4>Business Line</h4><p>Елегантні аксесуари для ділових людей. 2026</p></div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ===== PHOTO STORY ===== -->
+    <!-- ===== ФОТОІСТОРІЯ ===== -->
     <section class="photostory">
         <div class="inner">
             <h2>VIP Collection <span>в житті</span></h2>
@@ -1643,10 +1417,10 @@
             <div class="col">
                 <h4>Каталог</h4>
                 <a href="#">Валізи</a><br />
-                <a href="#">Сумки</a><br />
-                <a href="#">Рюкзаки</a><br />
+                <a href="#">Сумки та рюкзаки</a><br />
                 <a href="#">Галантерея</a><br />
-                <a href="#">Аксесуари</a>
+                <a href="#">Новинки</a><br />
+                <a href="#">Розпродаж</a>
             </div>
             <div class="col">
                 <h4>Покупцям</h4>
@@ -1711,7 +1485,7 @@
                         nav.style.width = 'auto';
                         nav.style.background = 'transparent';
                         nav.style.padding = '0';
-                        nav.style.gap = '20px';
+                        nav.style.gap = '16px';
                         nav.style.borderBottom = 'none';
                         nav.style.boxShadow = 'none';
                     } else {
@@ -1729,11 +1503,20 @@
                 this.reset();
             });
 
+            // ---- Кліки на категорії ----
+            document.querySelectorAll('.catalog .item, .subcategories .item').forEach(item => {
+                item.addEventListener('click', function() {
+                    const name = this.querySelector('h4')?.textContent || 'категорія';
+                    alert('🔗 Перехід до категорії: ' + name);
+                });
+            });
+
             // ---- Кліки на кольори ----
             document.querySelectorAll('.colors span').forEach(color => {
                 color.addEventListener('click', function(e) {
                     e.stopPropagation();
-                    alert('🎨 Ви обрали колір: ' + this.style.background);
+                    const colorName = this.style.background || 'обраний колір';
+                    alert('🎨 Ви обрали колір: ' + colorName);
                 });
             });
 
