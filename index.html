@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>VIP Collection – Heritage, Archive, Essence</title>
+    <title>VIP Collection — преміальна шкіргалантерея</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet" />
@@ -16,7 +16,7 @@
         }
         body {
             font-family: 'Inter', sans-serif;
-            background: #f5f4f0;
+            background: #faf8f5;
             color: #1a1a1a;
             -webkit-font-smoothing: antialiased;
         }
@@ -34,80 +34,20 @@
             max-width: 100%;
         }
 
-        /* ===== ПЕРЕМИКАЧ КОНЦЕПЦІЙ ===== */
-        .concept-switcher {
-            position: fixed;
-            top: 16px;
-            left: 50%;
-            transform: translateX(-50%);
-            z-index: 9999;
-            background: rgba(255, 255, 255, 0.94);
-            backdrop-filter: blur(16px);
-            padding: 8px 16px;
-            border-radius: 50px;
-            box-shadow: 0 8px 40px rgba(0, 0, 0, 0.04);
-            display: flex;
-            gap: 4px;
-            border: 1px solid rgba(0, 48, 87, 0.06);
-        }
-        .concept-switcher button {
-            background: none;
-            border: none;
-            padding: 8px 20px;
-            border-radius: 30px;
-            font-weight: 600;
-            font-size: 0.75rem;
-            color: #1a1a1a;
-            cursor: pointer;
-            transition: all 0.25s;
-            text-transform: uppercase;
-            letter-spacing: 1.5px;
-        }
-        .concept-switcher button.active {
-            background: #003057;
-            color: #fff;
-        }
-        .concept-switcher button:hover:not(.active) {
-            background: rgba(0, 48, 87, 0.04);
-        }
-
-        .concept {
-            display: none;
-            animation: fadeIn 0.8s ease;
-        }
-        .concept.active {
-            display: block;
-        }
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-                transform: translateY(24px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        /* ============================================================
-                   КОНЦЕПЦІЯ 01 — HERITAGE (Спадщина)
-                   ============================================================ */
-        .concept-heritage {
-            background: #f3efe8;
-        }
-        .concept-heritage .site-header {
-            background: rgba(243, 239, 232, 0.92);
+        /* ===== ХЕДЕР (як у Have a Rest) ===== */
+        .site-header {
+            background: rgba(255, 255, 255, 0.96);
             backdrop-filter: blur(12px);
             border-bottom: 1px solid rgba(0, 48, 87, 0.04);
             padding: 0 24px;
-            height: 80px;
+            height: 76px;
             display: flex;
             align-items: center;
             position: sticky;
             top: 0;
-            z-index: 100;
+            z-index: 1000;
         }
-        .concept-heritage .header-inner {
+        .header-inner {
             max-width: 1280px;
             width: 100%;
             margin: 0 auto;
@@ -115,46 +55,47 @@
             align-items: center;
             justify-content: space-between;
         }
-        .concept-heritage .header-logo {
+        .header-logo {
             font-family: 'Playfair Display', serif;
             font-size: 1.8rem;
             font-weight: 700;
             letter-spacing: 4px;
             color: #003057;
+            flex-shrink: 0;
         }
-        .concept-heritage .header-logo span {
+        .header-logo span {
             color: #d4a843;
             font-weight: 300;
         }
-        .concept-heritage .header-nav {
+        .header-nav {
             display: flex;
             gap: 32px;
-            font-size: 0.8rem;
+            font-size: 0.85rem;
             font-weight: 600;
             text-transform: uppercase;
-            letter-spacing: 2px;
-            color: #1a1a1a;
+            letter-spacing: 1.5px;
         }
-        .concept-heritage .header-nav a {
+        .header-nav a {
+            color: #1a1a1a;
             opacity: 0.5;
             transition: opacity 0.3s;
         }
-        .concept-heritage .header-nav a:hover {
+        .header-nav a:hover {
             opacity: 1;
             color: #003057;
         }
-        .concept-heritage .header-actions {
+        .header-actions {
             display: flex;
             gap: 20px;
-            font-size: 1.1rem;
+            font-size: 1.15rem;
             color: #1a1a1a;
-            opacity: 0.4;
+            opacity: 0.5;
         }
-        .concept-heritage .header-actions a:hover {
+        .header-actions a:hover {
             opacity: 1;
             color: #003057;
         }
-        .concept-heritage .menu-toggle {
+        .menu-toggle {
             display: none;
             background: none;
             border: none;
@@ -163,31 +104,32 @@
             color: #003057;
         }
 
-        .hero-heritage {
+        /* ===== ГЕРОЙ (як у Have a Rest) ===== */
+        .hero {
             height: 90vh;
             min-height: 600px;
             display: flex;
             align-items: center;
             position: relative;
-            background: #f3efe8;
+            background: #faf8f5;
             overflow: hidden;
         }
-        .hero-heritage .bg {
+        .hero .bg {
             position: absolute;
             right: 0;
             top: 0;
-            width: 60%;
+            width: 55%;
             height: 100%;
             background: url('https://images.unsplash.com/photo-1598661659240-668b70a9c1e5?w=1200&q=80') center/cover no-repeat;
-            opacity: 0.15;
+            opacity: 0.08;
         }
-        .hero-heritage .content {
+        .hero .content {
             position: relative;
             z-index: 2;
             max-width: 700px;
             padding: 0 24px;
         }
-        .hero-heritage .content .label {
+        .hero .content .label {
             font-size: 0.7rem;
             font-weight: 700;
             letter-spacing: 6px;
@@ -195,7 +137,7 @@
             text-transform: uppercase;
             margin-bottom: 16px;
         }
-        .hero-heritage .content h1 {
+        .hero .content h1 {
             font-family: 'Playfair Display', serif;
             font-size: clamp(3.2rem, 8vw, 5.6rem);
             font-weight: 700;
@@ -203,981 +145,733 @@
             color: #003057;
             margin-bottom: 16px;
         }
-        .hero-heritage .content h1 span {
+        .hero .content h1 span {
             color: #d4a843;
             font-weight: 400;
             font-style: italic;
         }
-        .hero-heritage .content p {
+        .hero .content p {
             font-weight: 300;
             font-size: 1.1rem;
             color: #555;
             max-width: 420px;
             margin-bottom: 32px;
         }
-        .btn-heritage {
+        .btn-hero {
             background: #003057;
             color: #fff;
-            padding: 14px 48px;
-            font-weight: 600;
+            padding: 16px 52px;
+            font-weight: 700;
             text-transform: uppercase;
             letter-spacing: 2px;
             border: none;
             transition: all 0.3s;
             display: inline-block;
-            font-size: 0.85rem;
+            font-size: 0.9rem;
+            border-radius: 2px;
+            cursor: pointer;
         }
-        .btn-heritage:hover {
+        .btn-hero:hover {
             background: #d4a843;
             color: #003057;
             transform: translateY(-2px);
-        }
-        .btn-outline-heritage {
-            background: transparent;
-            color: #003057;
-            padding: 14px 48px;
-            border: 1px solid rgba(0, 48, 87, 0.2);
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            transition: all 0.3s;
-            display: inline-block;
-            font-size: 0.85rem;
-        }
-        .btn-outline-heritage:hover {
-            border-color: #d4a843;
-            color: #d4a843;
+            box-shadow: 0 12px 30px rgba(0, 48, 87, 0.1);
         }
 
-        .section-heritage {
-            padding: 100px 0;
-            border-bottom: 1px solid rgba(0, 0, 0, 0.04);
+        /* ===== 7 ПЕРЕВАГ (як у Have a Rest) ===== */
+        .features {
+            padding: 80px 0;
+            background: #ffffff;
+            border-bottom: 1px solid #e8e4de;
         }
-        .section-heritage .title {
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(7, 1fr);
+            gap: 20px;
+            text-align: center;
+        }
+        .feature-item {
+            padding: 16px 8px;
+            transition: transform 0.3s;
+        }
+        .feature-item:hover {
+            transform: translateY(-4px);
+        }
+        .feature-item .icon {
+            font-size: 2.4rem;
+            margin-bottom: 8px;
+            display: block;
+            color: #d4a843;
+        }
+        .feature-item h4 {
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: #003057;
+            margin-bottom: 4px;
+        }
+        .feature-item p {
+            font-size: 0.75rem;
+            font-weight: 300;
+            color: #777;
+            line-height: 1.4;
+        }
+
+        /* ===== ВІДЕО-ТИЗЕР (як у Have a Rest) ===== */
+        .video-teaser {
+            padding: 80px 0;
+            background: #faf8f5;
+            text-align: center;
+            border-bottom: 1px solid #e8e4de;
+        }
+        .video-teaser .video-wrapper {
+            max-width: 900px;
+            margin: 0 auto 32px;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.04);
+            aspect-ratio: 16/9;
+            background: #d4a843;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+        .video-teaser .video-wrapper .play-btn {
+            font-size: 4rem;
+            color: #fff;
+            background: rgba(0, 48, 87, 0.6);
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            backdrop-filter: blur(4px);
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            transition: all 0.3s;
+            cursor: pointer;
+        }
+        .video-teaser .video-wrapper .play-btn:hover {
+            background: #003057;
+            transform: scale(1.05);
+        }
+        .video-teaser h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(2.2rem, 4vw, 3.6rem);
+            font-weight: 600;
+            color: #003057;
+            margin-bottom: 8px;
+        }
+        .video-teaser h2 span {
+            color: #d4a843;
+        }
+        .video-teaser p {
+            font-weight: 300;
+            color: #777;
+            margin-bottom: 24px;
+        }
+
+        /* ===== ГАРАНТІЙНИЙ БЛОК ===== */
+        .guarantee {
+            padding: 60px 0;
+            background: #ffffff;
+            text-align: center;
+            border-bottom: 1px solid #e8e4de;
+        }
+        .guarantee .icon {
+            font-size: 3.6rem;
+            display: block;
+            margin-bottom: 12px;
+            color: #d4a843;
+        }
+        .guarantee h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.2rem;
+            font-weight: 600;
+            color: #003057;
+            margin-bottom: 8px;
+        }
+        .guarantee p {
+            font-weight: 300;
+            color: #555;
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        /* ===== ВІДГУКИ (карусель) ===== */
+        .reviews {
+            padding: 80px 0;
+            background: #faf8f5;
+            border-bottom: 1px solid #e8e4de;
+        }
+        .reviews .title {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.6rem;
+            font-weight: 600;
+            color: #003057;
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        .reviews .title span {
+            color: #d4a843;
+        }
+        .review-slider {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 24px;
+        }
+        .review-card {
+            background: #ffffff;
+            padding: 24px;
+            border-radius: 4px;
+            border-left: 3px solid #d4a843;
+            transition: transform 0.3s;
+        }
+        .review-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.02);
+        }
+        .review-card .stars {
+            color: #d4a843;
+            font-size: 1rem;
+            letter-spacing: 2px;
+            margin-bottom: 8px;
+        }
+        .review-card p {
+            font-weight: 300;
+            font-size: 0.95rem;
+            line-height: 1.6;
+            color: #333;
+            margin-bottom: 12px;
+        }
+        .review-card .author {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        .review-card .author .avatar {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: #d4a843;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            font-weight: 700;
+            font-size: 1.1rem;
+        }
+        .review-card .author .name {
+            font-weight: 600;
+            color: #003057;
+            font-size: 0.9rem;
+        }
+        .review-card .author .handle {
+            font-weight: 300;
+            color: #999;
+            font-size: 0.8rem;
+        }
+
+        /* ===== ПРО БРЕНД ===== */
+        .about-brand {
+            padding: 80px 0;
+            background: #ffffff;
+            border-bottom: 1px solid #e8e4de;
+        }
+        .about-inner {
+            display: flex;
+            align-items: center;
+            gap: 60px;
+            flex-wrap: wrap;
+        }
+        .about-inner .text {
+            flex: 1;
+        }
+        .about-inner .text .label {
+            font-size: 0.7rem;
+            font-weight: 700;
+            letter-spacing: 4px;
+            color: #d4a843;
+            text-transform: uppercase;
+            margin-bottom: 8px;
+        }
+        .about-inner .text h2 {
             font-family: 'Playfair Display', serif;
             font-size: 2.8rem;
             font-weight: 600;
             color: #003057;
-            margin-bottom: 12px;
-        }
-        .section-heritage .title .gold {
-            color: #d4a843;
-            font-weight: 400;
-            font-style: italic;
-        }
-        .section-heritage .sub {
-            font-weight: 300;
-            color: #777;
-            margin-bottom: 48px;
-            font-size: 1.05rem;
-            max-width: 600px;
-        }
-
-        .matter-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 30px;
-        }
-        .matter-card {
-            background: #fff;
-            padding: 40px 30px;
-            border-radius: 4px;
-            transition: all 0.3s;
-            border: 1px solid rgba(0, 0, 0, 0.02);
-        }
-        .matter-card:hover {
-            transform: translateY(-6px);
-            box-shadow: 0 20px 50px rgba(0, 48, 87, 0.03);
-        }
-        .matter-card .num {
-            font-family: 'Playfair Display', serif;
-            font-size: 3rem;
-            font-weight: 700;
-            color: #d4a843;
-            opacity: 0.3;
-            margin-bottom: 8px;
-        }
-        .matter-card h3 {
-            font-family: 'Playfair Display', serif;
-            font-size: 1.6rem;
-            color: #003057;
-            margin-bottom: 8px;
-        }
-        .matter-card p {
-            font-weight: 300;
-            color: #555;
-            line-height: 1.6;
-        }
-
-        .product-grid-heritage {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 24px;
-        }
-        .product-heritage {
-            background: #fff;
-            border-radius: 4px;
-            overflow: hidden;
-            transition: transform 0.3s;
-        }
-        .product-heritage:hover {
-            transform: translateY(-4px);
-        }
-        .product-heritage img {
-            width: 100%;
-            aspect-ratio: 3/4;
-            object-fit: cover;
-        }
-        .product-heritage .info {
-            padding: 16px 20px 20px;
-        }
-        .product-heritage .info .brand {
-            font-size: 0.65rem;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            color: #999;
-            font-weight: 600;
-        }
-        .product-heritage .info h4 {
-            font-family: 'Playfair Display', serif;
-            font-weight: 400;
-            font-size: 1.1rem;
-            color: #003057;
-            margin: 4px 0 6px;
-        }
-        .product-heritage .info .price {
-            font-weight: 700;
-            color: #003057;
-            font-size: 1.1rem;
-        }
-        .product-heritage .info .price span {
-            color: #999;
-            font-weight: 400;
-            font-size: 0.9rem;
-            text-decoration: line-through;
-            margin-right: 8px;
-        }
-
-        /* ============================================================
-                   КОНЦЕПЦІЯ 02 — ARCHIVE (Музейна)
-                   ============================================================ */
-        .concept-archive {
-            background: #ffffff;
-        }
-        .concept-archive .site-header {
-            background: rgba(255, 255, 255, 0.96);
-            backdrop-filter: blur(12px);
-            border-bottom: 1px solid #e8e4de;
-            padding: 0 24px;
-            height: 72px;
-            display: flex;
-            align-items: center;
-            position: sticky;
-            top: 0;
-            z-index: 100;
-        }
-        .concept-archive .header-inner {
-            max-width: 1280px;
-            width: 100%;
-            margin: 0 auto;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            position: relative;
-        }
-        .concept-archive .header-logo {
-            font-family: 'Playfair Display', serif;
-            font-size: 1.6rem;
-            font-weight: 700;
-            letter-spacing: 6px;
-            color: #003057;
-        }
-        .concept-archive .header-logo span {
-            color: #d4a843;
-        }
-        .concept-archive .header-actions {
-            position: absolute;
-            right: 0;
-            display: flex;
-            gap: 20px;
-            font-size: 1.1rem;
-            color: #1a1a1a;
-            opacity: 0.4;
-        }
-        .concept-archive .header-actions a:hover {
-            opacity: 1;
-        }
-        .concept-archive .menu-toggle {
-            display: none;
-            background: none;
-            border: none;
-            font-size: 1.8rem;
-            cursor: pointer;
-            position: absolute;
-            left: 0;
-        }
-
-        .hero-archive {
-            height: 85vh;
-            min-height: 550px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background: #fff;
-            padding: 0 24px;
-        }
-        .hero-archive .center {
-            text-align: center;
-            max-width: 800px;
-        }
-        .hero-archive .center img {
-            max-height: 55vh;
-            width: 100%;
-            object-fit: contain;
-            margin-bottom: 32px;
-        }
-        .hero-archive .center .meta {
-            font-size: 0.8rem;
-            font-weight: 300;
-            color: #999;
-            letter-spacing: 4px;
-            text-transform: uppercase;
-        }
-        .hero-archive .center h2 {
-            font-family: 'Playfair Display', serif;
-            font-size: clamp(2.6rem, 5vw, 4rem);
-            font-weight: 400;
-            color: #003057;
-            margin: 8px 0 12px;
-        }
-        .hero-archive .center .specs {
-            display: flex;
-            justify-content: center;
-            gap: 32px;
-            font-size: 0.85rem;
-            color: #777;
-            font-weight: 300;
-            margin-bottom: 24px;
-        }
-        .btn-archive {
-            background: #003057;
-            color: #fff;
-            padding: 14px 48px;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            border: none;
-            transition: all 0.3s;
-            display: inline-block;
-            font-size: 0.85rem;
-        }
-        .btn-archive:hover {
-            background: #1a1a1a;
-        }
-
-        .section-archive {
-            padding: 80px 0;
-            border-bottom: 1px solid #e8e4de;
-        }
-        .section-archive .title {
-            font-family: 'Playfair Display', serif;
-            font-size: 2.4rem;
-            font-weight: 400;
-            color: #003057;
-            text-align: center;
-            margin-bottom: 8px;
-        }
-        .section-archive .title .gold {
-            color: #d4a843;
-        }
-
-        .archive-grid {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 20px;
-        }
-        .archive-item {
-            background: #fafaf8;
-            border-radius: 4px;
-            overflow: hidden;
-            transition: transform 0.3s;
-        }
-        .archive-item:hover {
-            transform: translateY(-4px);
-        }
-        .archive-item img {
-            width: 100%;
-            aspect-ratio: 1/1;
-            object-fit: cover;
-        }
-        .archive-item .info {
-            padding: 16px;
-        }
-        .archive-item .info h4 {
-            font-weight: 500;
-            font-size: 0.95rem;
-            color: #003057;
-        }
-        .archive-item .info .price {
-            font-weight: 700;
-            color: #1a1a1a;
-            font-size: 1rem;
-        }
-
-        .detail-block {
-            display: flex;
-            gap: 60px;
-            align-items: center;
-            flex-wrap: wrap;
-        }
-        .detail-block .images {
-            flex: 1;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 12px;
-        }
-        .detail-block .images img {
-            width: 100%;
-            aspect-ratio: 1/1;
-            object-fit: cover;
-            border-radius: 4px;
-        }
-        .detail-block .images img:first-child {
-            grid-row: span 2;
-            aspect-ratio: 1/2;
-        }
-        .detail-block .text {
-            flex: 1;
-        }
-        .detail-block .text h3 {
-            font-family: 'Playfair Display', serif;
-            font-size: 2.4rem;
-            font-weight: 400;
-            color: #003057;
             margin-bottom: 16px;
         }
-        .detail-block .text p {
-            font-weight: 300;
-            color: #555;
-            margin-bottom: 16px;
-        }
-        .detail-block .text .tags {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 8px;
-        }
-        .detail-block .text .tags span {
-            background: #f0efec;
-            padding: 6px 16px;
-            border-radius: 30px;
-            font-size: 0.8rem;
-            font-weight: 500;
-            color: #003057;
-        }
-
-        /* ============================================================
-                   КОНЦЕПЦІЯ 03 — ESSENCE (Сутність)
-                   ============================================================ */
-        .concept-essence {
-            background: #f8f5f0;
-        }
-        .concept-essence .site-header {
-            background: rgba(248, 245, 240, 0.94);
-            backdrop-filter: blur(12px);
-            border-bottom: 1px solid rgba(0, 0, 0, 0.02);
-            padding: 0 24px;
-            height: 72px;
-            display: flex;
-            align-items: center;
-            position: sticky;
-            top: 0;
-            z-index: 100;
-        }
-        .concept-essence .header-inner {
-            max-width: 1280px;
-            width: 100%;
-            margin: 0 auto;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-        }
-        .concept-essence .header-logo {
-            font-family: 'Playfair Display', serif;
-            font-size: 1.6rem;
-            font-weight: 700;
-            letter-spacing: 4px;
-            color: #003057;
-        }
-        .concept-essence .header-logo span {
+        .about-inner .text h2 span {
             color: #d4a843;
         }
-        .concept-essence .header-nav {
-            display: flex;
-            gap: 24px;
-            font-size: 0.8rem;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 1.5px;
-        }
-        .concept-essence .header-nav a {
-            color: #1a1a1a;
-            opacity: 0.4;
-            transition: opacity 0.3s;
-        }
-        .concept-essence .header-nav a:hover {
-            opacity: 1;
-            color: #003057;
-        }
-        .concept-essence .header-actions {
-            display: flex;
-            gap: 16px;
-            font-size: 1.1rem;
-            color: #1a1a1a;
-            opacity: 0.4;
-        }
-        .concept-essence .header-actions a:hover {
-            opacity: 1;
-        }
-        .concept-essence .menu-toggle {
-            display: none;
-            background: none;
-            border: none;
-            font-size: 1.8rem;
-            cursor: pointer;
-        }
-
-        .hero-essence {
-            height: 90vh;
-            min-height: 600px;
-            background: url('https://images.unsplash.com/photo-1534430480872-ef16b6eb4321?w=1600&q=80') center/cover no-repeat;
-            display: flex;
-            align-items: center;
-            position: relative;
-        }
-        .hero-essence::after {
-            content: '';
-            position: absolute;
-            inset: 0;
-            background: linear-gradient(90deg, rgba(0, 48, 87, 0.35) 0%, rgba(0, 48, 87, 0.02) 70%);
-        }
-        .hero-essence .content {
-            position: relative;
-            z-index: 2;
-            max-width: 620px;
-            padding: 0 24px;
-            color: #fff;
-        }
-        .hero-essence .content .label {
-            font-size: 0.7rem;
-            font-weight: 700;
-            letter-spacing: 6px;
-            color: #d4a843;
-            text-transform: uppercase;
-            margin-bottom: 12px;
-        }
-        .hero-essence .content h1 {
-            font-family: 'Playfair Display', serif;
-            font-size: clamp(2.8rem, 7vw, 5rem);
-            font-weight: 700;
-            line-height: 1.05;
-            margin-bottom: 16px;
-        }
-        .hero-essence .content h1 span {
-            color: #d4a843;
-        }
-        .hero-essence .content p {
-            font-weight: 300;
-            font-size: 1.1rem;
-            opacity: 0.9;
-            max-width: 400px;
-            margin-bottom: 32px;
-        }
-
-        .scenario-essence {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 20px;
-        }
-        .scenario-essence .card {
-            background: #fff;
-            padding: 32px 20px;
-            text-align: center;
-            border-radius: 4px;
-            transition: all 0.3s;
-            border: 1px solid rgba(0, 0, 0, 0.02);
-        }
-        .scenario-essence .card:hover {
-            transform: translateY(-6px);
-            box-shadow: 0 20px 50px rgba(0, 48, 87, 0.02);
-        }
-        .scenario-essence .card .icon {
-            font-size: 2.6rem;
-            display: block;
-            margin-bottom: 12px;
-        }
-        .scenario-essence .card h4 {
-            font-weight: 600;
-            font-size: 1.1rem;
-            color: #003057;
-            margin-bottom: 4px;
-        }
-        .scenario-essence .card p {
-            font-weight: 300;
-            color: #777;
-            font-size: 0.85rem;
-        }
-
-        .story-essence {
-            display: flex;
-            align-items: center;
-            gap: 60px;
-            flex-wrap: wrap;
-            background: #fff;
-            padding: 60px;
-            border-radius: 4px;
-        }
-        .story-essence .text {
-            flex: 1;
-        }
-        .story-essence .text h3 {
-            font-family: 'Playfair Display', serif;
-            font-size: 2.6rem;
-            font-weight: 400;
-            color: #003057;
-            margin-bottom: 16px;
-        }
-        .story-essence .text h3 span {
-            color: #d4a843;
-        }
-        .story-essence .text p {
+        .about-inner .text p {
             font-weight: 300;
             color: #555;
             line-height: 1.8;
-            max-width: 440px;
+            max-width: 500px;
+            margin-bottom: 24px;
         }
-        .story-essence .image {
+        .about-inner .image {
             flex: 1;
-            min-height: 320px;
+            min-height: 350px;
             background: url('https://images.unsplash.com/photo-1601924971179-d6f38f24ce3d?w=800&q=80') center/cover no-repeat;
             border-radius: 4px;
         }
 
+        /* ===== ФУТЕР (як у Have a Rest) ===== */
+        .site-footer {
+            background: #003057;
+            color: rgba(255, 255, 255, 0.7);
+            padding: 60px 24px 30px;
+        }
+        .footer-inner {
+            max-width: 1280px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+        .footer-inner .brand h4 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #fff;
+            margin-bottom: 8px;
+        }
+        .footer-inner .brand h4 span {
+            color: #d4a843;
+        }
+        .footer-inner .brand p {
+            font-weight: 300;
+            font-size: 0.9rem;
+            max-width: 280px;
+            line-height: 1.6;
+        }
+        .footer-inner .newsletter h4,
+        .footer-inner .links h4,
+        .footer-inner .contacts h4 {
+            color: #d4a843;
+            font-weight: 600;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 16px;
+        }
+        .footer-inner .newsletter form {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+        }
+        .footer-inner .newsletter input {
+            flex: 1;
+            min-width: 160px;
+            padding: 10px 16px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 2px;
+            background: rgba(255, 255, 255, 0.04);
+            color: #fff;
+            font-size: 0.9rem;
+        }
+        .footer-inner .newsletter input::placeholder {
+            color: rgba(255, 255, 255, 0.2);
+        }
+        .footer-inner .newsletter button {
+            background: #d4a843;
+            color: #003057;
+            border: none;
+            padding: 10px 24px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border-radius: 2px;
+            cursor: pointer;
+            transition: background 0.3s;
+            font-size: 0.8rem;
+        }
+        .footer-inner .newsletter button:hover {
+            background: #e8c35a;
+        }
+        .footer-inner .links ul {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+        }
+        .footer-inner .links ul a {
+            font-weight: 300;
+            font-size: 0.9rem;
+            transition: color 0.2s;
+        }
+        .footer-inner .links ul a:hover {
+            color: #fff;
+        }
+        .footer-inner .contacts p {
+            font-weight: 300;
+            font-size: 0.9rem;
+            margin-bottom: 4px;
+        }
+        .footer-inner .contacts .social {
+            display: flex;
+            gap: 16px;
+            font-size: 1.4rem;
+            margin-top: 12px;
+        }
+        .footer-inner .contacts .social a {
+            opacity: 0.5;
+            transition: opacity 0.3s;
+        }
+        .footer-inner .contacts .social a:hover {
+            opacity: 1;
+        }
+        .footer-bottom {
+            max-width: 1280px;
+            margin: 0 auto;
+            border-top: 1px solid rgba(255, 255, 255, 0.06);
+            padding-top: 24px;
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 12px;
+            font-size: 0.8rem;
+            font-weight: 300;
+        }
+        .footer-bottom a {
+            margin-left: 20px;
+            transition: color 0.2s;
+        }
+        .footer-bottom a:hover {
+            color: #d4a843;
+        }
+
         /* ===== АДАПТИВ ===== */
         @media (max-width: 1024px) {
-            .matter-grid {
+            .features-grid {
+                grid-template-columns: repeat(4, 1fr);
+            }
+            .review-slider {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .footer-inner {
                 grid-template-columns: 1fr 1fr;
-            }
-            .product-grid-heritage {
-                grid-template-columns: repeat(2, 1fr);
-            }
-            .archive-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-            .scenario-essence {
-                grid-template-columns: repeat(2, 1fr);
             }
         }
 
         @media (max-width: 820px) {
-            .concept-switcher {
-                top: 8px;
-                padding: 6px 10px;
-                gap: 2px;
-            }
-            .concept-switcher button {
-                font-size: 0.6rem;
-                padding: 6px 12px;
-            }
-            .concept-heritage .header-nav,
-            .concept-essence .header-nav {
+            .header-nav {
                 display: none;
             }
-            .concept-heritage .menu-toggle,
-            .concept-essence .menu-toggle,
-            .concept-archive .menu-toggle {
+            .menu-toggle {
                 display: block;
             }
-            .hero-heritage .bg {
+            .hero .bg {
                 width: 100%;
-                opacity: 0.06;
+                opacity: 0.04;
             }
-            .matter-grid {
-                grid-template-columns: 1fr;
-            }
-            .product-grid-heritage {
-                grid-template-columns: 1fr 1fr;
-            }
-            .archive-grid {
-                grid-template-columns: 1fr 1fr;
-            }
-            .scenario-essence {
-                grid-template-columns: 1fr;
-            }
-            .detail-block {
-                flex-direction: column;
-            }
-            .detail-block .images {
-                grid-template-columns: 1fr 1fr;
-            }
-            .detail-block .images img:first-child {
-                grid-row: span 1;
-                aspect-ratio: 1/1;
-            }
-            .story-essence {
-                flex-direction: column;
-                padding: 30px;
-            }
-            .concept-archive .header-actions {
-                position: static;
-            }
-            .concept-archive .header-inner {
-                justify-content: space-between;
-            }
-            .hero-archive .center img {
-                max-height: 40vh;
-            }
-            .hero-essence {
+            .hero {
                 height: 70vh;
+                min-height: 480px;
             }
-            .hero-essence .content h1 {
-                font-size: 2.4rem;
+            .hero .content h1 {
+                font-size: 2.8rem;
+            }
+            .features-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+            .review-slider {
+                grid-template-columns: 1fr;
+            }
+            .about-inner {
+                flex-direction: column;
+            }
+            .about-inner .image {
+                min-height: 250px;
+            }
+            .footer-inner {
+                grid-template-columns: 1fr;
+                gap: 32px;
+            }
+            .footer-bottom {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+            .footer-bottom a {
+                margin: 0 10px;
             }
         }
 
         @media (max-width: 600px) {
-            .product-grid-heritage {
-                grid-template-columns: 1fr;
+            .features-grid {
+                grid-template-columns: repeat(2, 1fr);
             }
-            .archive-grid {
-                grid-template-columns: 1fr;
+            .hero .content h1 {
+                font-size: 2.2rem;
             }
-            .concept-switcher button {
-                font-size: 0.5rem;
-                padding: 4px 8px;
-                letter-spacing: 0.5px;
+            .hero .content p {
+                font-size: 1rem;
             }
-            .hero-heritage .content h1 {
-                font-size: 2.6rem;
+            .btn-hero {
+                padding: 14px 32px;
+                font-size: 0.8rem;
             }
-            .section-heritage .title {
+            .guarantee h3 {
+                font-size: 1.6rem;
+            }
+            .about-inner .text h2 {
                 font-size: 2rem;
             }
-            .hero-archive .center h2 {
+            .reviews .title {
                 font-size: 2rem;
             }
-            .story-essence .text h3 {
-                font-size: 2rem;
+            .site-header {
+                height: 64px;
+                padding: 0 16px;
+            }
+            .header-logo {
+                font-size: 1.4rem;
+            }
+            .video-teaser .video-wrapper {
+                aspect-ratio: 4/3;
+            }
+            .video-teaser .video-wrapper .play-btn {
+                width: 60px;
+                height: 60px;
+                font-size: 2.4rem;
             }
         }
     </style>
 </head>
 <body>
 
-    <!-- ===== ПЕРЕМИКАЧ ===== -->
-    <div class="concept-switcher">
-        <button class="active" data-concept="heritage">Спадщина</button>
-        <button data-concept="archive">Архів</button>
-        <button data-concept="essence">Сутність</button>
-    </div>
+    <!-- ===== ХЕДЕР ===== -->
+    <header class="site-header">
+        <div class="header-inner">
+            <button class="menu-toggle">☰</button>
+            <a href="#" class="header-logo">VIP<span>.</span></a>
+            <nav class="header-nav">
+                <a href="#">Колекції</a>
+                <a href="#">Про бренд</a>
+                <a href="#">Магазини</a>
+                <a href="#">Контакти</a>
+            </nav>
+            <div class="header-actions">
+                <a href="#">⌕</a>
+                <a href="#">♡</a>
+                <a href="#">🛒</a>
+            </div>
+        </div>
+    </header>
 
-    <!-- ============================================================
-    КОНЦЕПЦІЯ 01 — HERITAGE
-    ============================================================ -->
-    <div class="concept concept-heritage active" id="concept-heritage">
+    <!-- ===== ГЕРОЙ ===== -->
+    <section class="hero">
+        <div class="bg"></div>
+        <div class="content">
+            <div class="label">Колекція 2026</div>
+            <h1>VIP <span>Collection</span></h1>
+            <p>Речі, які подорожують разом з вами. Натуральна шкіра, бездоганна якість, вічний стиль.</p>
+            <a href="#" class="btn-hero">Переглянути колекцію</a>
+        </div>
+    </section>
 
-        <header class="site-header">
-            <div class="header-inner">
-                <button class="menu-toggle">☰</button>
-                <a href="#" class="header-logo">VIP<span>.</span></a>
-                <nav class="header-nav">
-                    <a href="#">Матерія</a>
-                    <a href="#">Колекція</a>
-                    <a href="#">Вироби</a>
-                    <a href="#">Історія</a>
-                </nav>
-                <div class="header-actions">
-                    <a href="#">⌕</a>
-                    <a href="#">♡</a>
-                    <a href="#">🛒</a>
+    <!-- ===== 7 ПЕРЕВАГ ===== -->
+    <section class="features">
+        <div class="container">
+            <div class="features-grid">
+                <div class="feature-item">
+                    <span class="icon">🧵</span>
+                    <h4>Натуральна шкіра</h4>
+                    <p>Матеріал, який живе роками</p>
+                </div>
+                <div class="feature-item">
+                    <span class="icon">✋</span>
+                    <h4>Ручна робота</h4>
+                    <p>Кожен виріб створюється майстром</p>
+                </div>
+                <div class="feature-item">
+                    <span class="icon">🔩</span>
+                    <h4>Міцна фурнітура</h4>
+                    <p>Італійські комплектуючі</p>
+                </div>
+                <div class="feature-item">
+                    <span class="icon">🔒</span>
+                    <h4>Вбудований замок</h4>
+                    <p>TSA з функцією захисту</p>
+                </div>
+                <div class="feature-item">
+                    <span class="icon">📂</span>
+                    <h4>Органайзер</h4>
+                    <p>Продуманий внутрішній простір</p>
+                </div>
+                <div class="feature-item">
+                    <span class="icon">🛡️</span>
+                    <h4>Гарантія 365 днів</h4>
+                    <p>Заміна або повернення</p>
+                </div>
+                <div class="feature-item">
+                    <span class="icon">🎁</span>
+                    <h4>Подарункова упаковка</h4>
+                    <p>Дбаємо про враження</p>
                 </div>
             </div>
-        </header>
+        </div>
+    </section>
 
-        <section class="hero-heritage">
-            <div class="bg"></div>
-            <div class="content">
-                <div class="label">Створено з любов'ю до шкіри</div>
-                <h1>Спадщина<br><span>VIP Collection</span></h1>
-                <p>Натуральна шкіра, яка живе роками. Ручна робота майстрів, що передається з покоління в покоління.</p>
-                <a href="#" class="btn-heritage">Дізнатися більше</a>
+    <!-- ===== ВІДЕО-ТИЗЕР ===== -->
+    <section class="video-teaser">
+        <div class="container">
+            <div class="video-wrapper">
+                <div class="play-btn">▶</div>
             </div>
-        </section>
+            <h2>WILL YOU <span>CHOOSE</span> VIP?</h2>
+            <p>Кожен виріб — це історія, яку ви створюєте разом з нами.</p>
+            <a href="#" class="btn-hero">Обрати валізу</a>
+        </div>
+    </section>
 
-        <section class="section-heritage">
-            <div class="container">
-                <h2 class="title">Мат<span class="gold">ерія</span></h2>
-                <div class="sub">Шлях від сировини до готового виробу</div>
-                <div class="matter-grid">
-                    <div class="matter-card">
-                        <div class="num">01</div>
-                        <h3>Шкіра</h3>
-                        <p>Натуральна шкіра найвищої якості. Ми обираємо тільки найкращі матеріали, які з часом стають ще красивішими.</p>
-                    </div>
-                    <div class="matter-card">
-                        <div class="num">02</div>
-                        <h3>Майстерня</h3>
-                        <p>Кожен виріб створюється вручну досвідченими майстрами. Увага до деталей – наша головна цінність.</p>
-                    </div>
-                    <div class="matter-card">
-                        <div class="num">03</div>
-                        <h3>Готовий виріб</h3>
-                        <p>Те, що ви отримуєте – не просто річ, а супутник на довгі роки. Якість, яка не підводить.</p>
+    <!-- ===== ГАРАНТІЙНИЙ БЛОК ===== -->
+    <section class="guarantee">
+        <div class="container">
+            <span class="icon">🛡️</span>
+            <h3>Гарантія якості — 365 днів</h3>
+            <p>При пошкодженні валізи — ми обміняємо її на нову або повернемо кошти.</p>
+        </div>
+    </section>
+
+    <!-- ===== ВІДГУКИ ===== -->
+    <section class="reviews">
+        <div class="container">
+            <h2 class="title">Відгуки <span>наших клієнтів</span></h2>
+            <div class="review-slider">
+                <div class="review-card">
+                    <div class="stars">★★★★★</div>
+                    <p>"Найкраща шкіряна сумка, яку я мала. Якість неймовірна, а дизайн — вічна класика."</p>
+                    <div class="author">
+                        <div class="avatar">О</div>
+                        <div><div class="name">Олена</div><div class="handle">@olenatravel</div></div>
                     </div>
                 </div>
-            </div>
-        </section>
-
-        <section class="section-heritage" style="border-bottom:none;">
-            <div class="container">
-                <h2 class="title">Вироб<span class="gold">и</span></h2>
-                <div class="product-grid-heritage">
-                    <div class="product-heritage">
-                        <img src="https://images.unsplash.com/photo-1601924971179-d6f38f24ce3d?w=400&q=80" alt="Гаманець">
-                        <div class="info">
-                            <div class="brand">VIP Leather</div>
-                            <h4>Гаманець класичний</h4>
-                            <div class="price">1 290 ₴</div>
-                        </div>
-                    </div>
-                    <div class="product-heritage">
-                        <img src="https://images.unsplash.com/photo-1566150905458-1bf1fc113f0d?w=400&q=80" alt="Сумка">
-                        <div class="info">
-                            <div class="brand">VIP Collection</div>
-                            <h4>Сумка Tote</h4>
-                            <div class="price">4 890 ₴</div>
-                        </div>
-                    </div>
-                    <div class="product-heritage">
-                        <img src="https://images.unsplash.com/photo-1601758063897-1d9b4e4f13c0?w=400&q=80" alt="Портмоне">
-                        <div class="info">
-                            <div class="brand">VIP Leather</div>
-                            <h4>Портмоне жіноче</h4>
-                            <div class="price">890 ₴</div>
-                        </div>
-                    </div>
-                    <div class="product-heritage">
-                        <img src="https://images.unsplash.com/photo-1584917865442-de89df76afd3?w=400&q=80" alt="Рюкзак">
-                        <div class="info">
-                            <div class="brand">VIP Business</div>
-                            <h4>Рюкзак для ноутбука</h4>
-                            <div class="price">5 690 ₴</div>
-                        </div>
+                <div class="review-card">
+                    <div class="stars">★★★★★</div>
+                    <p>"Валіза витримала 8 перельотів за місяць — жодної подряпини. Дуже задоволений!"</p>
+                    <div class="author">
+                        <div class="avatar">А</div>
+                        <div><div class="name">Андрій</div><div class="handle">@andriybiz</div></div>
                     </div>
                 </div>
-            </div>
-        </section>
-    </div>
-
-    <!-- ============================================================
-    КОНЦЕПЦІЯ 02 — ARCHIVE
-    ============================================================ -->
-    <div class="concept concept-archive" id="concept-archive">
-
-        <header class="site-header">
-            <div class="header-inner">
-                <button class="menu-toggle">☰</button>
-                <a href="#" class="header-logo">VIP<span>.</span></a>
-                <div class="header-actions">
-                    <a href="#">⌕</a>
-                    <a href="#">♡</a>
-                    <a href="#">🛒</a>
+                <div class="review-card">
+                    <div class="stars">★★★★★</div>
+                    <p>"Гаманець з натуральної шкіри — це щось неймовірне. М'який, приємний на дотик."</p>
+                    <div class="author">
+                        <div class="avatar">М</div>
+                        <div><div class="name">Марія</div><div class="handle">@maria_style</div></div>
+                    </div>
                 </div>
-            </div>
-        </header>
-
-        <section class="hero-archive">
-            <div class="center">
-                <img src="https://images.unsplash.com/photo-1559588358-2f9bd1d49c22?w=800&q=80" alt="Валіза Archive">
-                <div class="meta">Колекція 2026 · Обмежений тираж</div>
-                <h2>MIAMI BEACH</h2>
-                <div class="specs">
-                    <span>110 L</span>
-                    <span>ABS</span>
-                    <span>4 колеса</span>
-                </div>
-                <a href="#" class="btn-archive">Дивитися модель →</a>
-            </div>
-        </section>
-
-        <section class="section-archive">
-            <div class="container">
-                <h2 class="title">Архів <span class="gold">колекцій</span></h2>
-                <div class="archive-grid">
-                    <div class="archive-item">
-                        <img src="https://images.unsplash.com/photo-1607552384479-9f2f21dd4d78?w=400&q=80" alt="Валіза">
-                        <div class="info"><h4>Валіза ручна</h4><div class="price">4 290 ₴</div></div>
-                    </div>
-                    <div class="archive-item">
-                        <img src="https://images.unsplash.com/photo-1544441893-675973e31985?w=400&q=80" alt="Валіза">
-                        <div class="info"><h4>Валіза 75 см</h4><div class="price">6 990 ₴</div></div>
-                    </div>
-                    <div class="archive-item">
-                        <img src="https://images.unsplash.com/photo-1601758063897-1d9b4e4f13c0?w=400&q=80" alt="Аксесуар">
-                        <div class="info"><h4>Несесер дорожній</h4><div class="price">890 ₴</div></div>
-                    </div>
-                    <div class="archive-item">
-                        <img src="https://images.unsplash.com/photo-1566150905458-1bf1fc113f0d?w=400&q=80" alt="Сумка">
-                        <div class="info"><h4>Сумка Crossbody</h4><div class="price">3 890 ₴</div></div>
+                <div class="review-card">
+                    <div class="stars">★★★★★</div>
+                    <p>"Рюкзак для ноутбука — ідеальний супутник для відряджень. Все продумано до дрібниць."</p>
+                    <div class="author">
+                        <div class="avatar">І</div>
+                        <div><div class="name">Ігор</div><div class="handle">@igorbusiness</div></div>
                     </div>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <section class="section-archive" style="border-bottom:none;">
-            <div class="container">
-                <div class="detail-block">
-                    <div class="images">
-                        <img src="https://images.unsplash.com/photo-1601924971179-d6f38f24ce3d?w=400&q=80" alt="Деталь 1">
-                        <img src="https://images.unsplash.com/photo-1601758063897-1d9b4e4f13c0?w=400&q=80" alt="Деталь 2">
-                        <img src="https://images.unsplash.com/photo-1566150905458-1bf1fc113f0d?w=400&q=80" alt="Деталь 3">
-                    </div>
-                    <div class="text">
-                        <h3>Деталі, які варті уваги</h3>
-                        <p>Кожен шов, кожна застібка, кожен міліметр шкіри – це результат багаторічного досвіду та бездоганного смаку.</p>
-                        <div class="tags">
-                            <span>Ручна робота</span>
-                            <span>Натуральна шкіра</span>
-                            <span>Італійська фурнітура</span>
-                            <span>Гарантія 5 років</span>
-                        </div>
-                    </div>
+    <!-- ===== ПРО БРЕНД ===== -->
+    <section class="about-brand">
+        <div class="container">
+            <div class="about-inner">
+                <div class="text">
+                    <div class="label">Про VIP Collection</div>
+                    <h2>Спадщина <span>якості</span></h2>
+                    <p>VIP Collection — це преміальна шкіргалантерея та travel-аксесуари. Кожен виріб створюється з любов'ю до деталей та турботою про ваш комфорт. Ми використовуємо тільки натуральну шкіру та найкращу фурнітуру.</p>
+                    <a href="#" class="btn-hero">Дізнатися більше</a>
+                </div>
+                <div class="image"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== ФУТЕР ===== -->
+    <footer class="site-footer">
+        <div class="footer-inner">
+            <div class="brand">
+                <h4>VIP<span>.</span></h4>
+                <p>Преміальна шкіргалантерея та travel-аксесуари. Створено з любов'ю до деталей.</p>
+            </div>
+            <div class="newsletter">
+                <h4>Підписка</h4>
+                <p style="font-weight:300; font-size:0.9rem; margin-bottom:12px;">Отримайте знижку -10% на першу покупку</p>
+                <form>
+                    <input type="email" placeholder="Ваш email" required />
+                    <button type="submit">Підписатися</button>
+                </form>
+            </div>
+            <div class="links">
+                <h4>Меню</h4>
+                <ul>
+                    <li><a href="#">Колекції</a></li>
+                    <li><a href="#">Про бренд</a></li>
+                    <li><a href="#">Магазини</a></li>
+                    <li><a href="#">Контакти</a></li>
+                </ul>
+            </div>
+            <div class="contacts">
+                <h4>Контакти</h4>
+                <p>+38 (044) 123-45-67</p>
+                <p>info@vip.ua</p>
+                <p>Пн–Пт: 10:00 – 20:00</p>
+                <div class="social">
+                    <a href="#">📷</a>
+                    <a href="#">📘</a>
+                    <a href="#">📺</a>
                 </div>
             </div>
-        </section>
-    </div>
-
-    <!-- ============================================================
-    КОНЦЕПЦІЯ 03 — ESSENCE
-    ============================================================ -->
-    <div class="concept concept-essence" id="concept-essence">
-
-        <header class="site-header">
-            <div class="header-inner">
-                <button class="menu-toggle">☰</button>
-                <a href="#" class="header-logo">VIP<span>.</span></a>
-                <nav class="header-nav">
-                    <a href="#">Сценарії</a>
-                    <a href="#">Колекція</a>
-                    <a href="#">Про нас</a>
-                </nav>
-                <div class="header-actions">
-                    <a href="#">⌕</a>
-                    <a href="#">♡</a>
-                    <a href="#">🛒</a>
-                </div>
+        </div>
+        <div class="footer-bottom">
+            <span>© VIP Collection 2026</span>
+            <div>
+                <a href="#">Політика конфіденційності</a>
+                <a href="#">Публічна оферта</a>
             </div>
-        </header>
-
-        <section class="hero-essence">
-            <div class="content">
-                <div class="label">VIP Essence</div>
-                <h1>Речі, які <br><span>подорожують</span> разом з вами.</h1>
-                <p>Супутники у щоденних маршрутах та далеких подорожах. Створені з любов'ю до деталей.</p>
-                <a href="#" class="btn-heritage">Обрати свій сценарій</a>
-            </div>
-        </section>
-
-        <section class="section-heritage" style="background:#f8f5f0; border-bottom:none;">
-            <div class="container">
-                <h2 class="title">Оберіть <span class="gold">сценарій</span></h2>
-                <div class="scenario-essence">
-                    <div class="card">
-                        <span class="icon">💼</span>
-                        <h4>Відрядження</h4>
-                        <p>Портфелі, сумки для ноутбука, чохли для документів</p>
-                    </div>
-                    <div class="card">
-                        <span class="icon">✈️</span>
-                        <h4>Відпочинок</h4>
-                        <p>Валізи, дорожні сумки, несесери</p>
-                    </div>
-                    <div class="card">
-                        <span class="icon">🏙️</span>
-                        <h4>Кожен день</h4>
-                        <p>Рюкзаки, шопери, гаманці</p>
-                    </div>
-                    <div class="card">
-                        <span class="icon">🎁</span>
-                        <h4>Особливий випадок</h4>
-                        <p>Шкіряні аксесуари, подарункові набори</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section class="section-heritage" style="background:#f8f5f0; border-bottom:none; padding-top:0;">
-            <div class="container">
-                <div class="story-essence">
-                    <div class="text">
-                        <h3>Історія <span>VIP</span></h3>
-                        <p>Ми не просто створюємо аксесуари. Ми вкладаємо душу в кожен виріб, щоб він став вашим надійним супутником на довгі роки. Натуральна шкіра, ручна робота та бездоганна якість – це те, що робить VIP справжнім.</p>
-                        <a href="#" class="btn-heritage" style="margin-top:16px;">Дізнатися більше</a>
-                    </div>
-                    <div class="image"></div>
-                </div>
-            </div>
-        </section>
-    </div>
+        </div>
+    </footer>
 
     <!-- ===== JAVASCRIPT ===== -->
     <script>
         document.addEventListener('DOMContentLoaded', function() {
 
-            const switchBtns = document.querySelectorAll('.concept-switcher button');
-            const concepts = {
-                heritage: document.getElementById('concept-heritage'),
-                archive: document.getElementById('concept-archive'),
-                essence: document.getElementById('concept-essence')
-            };
-
-            switchBtns.forEach(btn => {
-                btn.addEventListener('click', function() {
-                    const concept = this.dataset.concept;
-                    switchBtns.forEach(b => b.classList.remove('active'));
-                    this.classList.add('active');
-                    Object.keys(concepts).forEach(key => {
-                        concepts[key].classList.toggle('active', key === concept);
-                    });
-                });
-            });
-
-            // Мобільне меню
-            document.querySelectorAll('.menu-toggle').forEach(toggle => {
-                toggle.addEventListener('click', function() {
-                    const nav = this.closest('.header-inner').querySelector('.header-nav');
-                    if (nav) {
-                        if (nav.style.display === 'flex') {
-                            nav.style.display = 'none';
-                        } else {
-                            nav.style.display = 'flex';
-                            nav.style.flexDirection = 'column';
-                            nav.style.position = 'absolute';
-                            nav.style.top = '100%';
-                            nav.style.left = '0';
-                            nav.style.width = '100%';
-                            nav.style.background = '#fff';
-                            nav.style.padding = '20px 24px';
-                            nav.style.gap = '12px';
-                            nav.style.borderBottom = '1px solid #e8e4de';
-                            nav.style.boxShadow = '0 20px 40px rgba(0,0,0,0.04)';
-                            nav.style.zIndex = '999';
-                        }
+            // ---- Мобільне меню ----
+            const menuToggle = document.querySelector('.menu-toggle');
+            const nav = document.querySelector('.header-nav');
+            if (menuToggle && nav) {
+                menuToggle.addEventListener('click', function() {
+                    if (nav.style.display === 'flex') {
+                        nav.style.display = 'none';
+                    } else {
+                        nav.style.display = 'flex';
+                        nav.style.flexDirection = 'column';
+                        nav.style.position = 'absolute';
+                        nav.style.top = '76px';
+                        nav.style.left = '0';
+                        nav.style.width = '100%';
+                        nav.style.background = '#fff';
+                        nav.style.padding = '20px 24px';
+                        nav.style.gap = '12px';
+                        nav.style.borderBottom = '1px solid #e8e4de';
+                        nav.style.boxShadow = '0 20px 40px rgba(0,0,0,0.02)';
+                        nav.style.zIndex = '999';
                     }
                 });
-            });
-
-            window.addEventListener('resize', function() {
-                document.querySelectorAll('.header-nav').forEach(nav => {
+                nav.querySelectorAll('a').forEach(link => {
+                    link.addEventListener('click', function() {
+                        if (window.innerWidth <= 820) nav.style.display = 'none';
+                    });
+                });
+                window.addEventListener('resize', function() {
                     if (window.innerWidth > 820) {
                         nav.style.display = 'flex';
                         nav.style.flexDirection = 'row';
@@ -1185,16 +879,30 @@
                         nav.style.width = 'auto';
                         nav.style.background = 'transparent';
                         nav.style.padding = '0';
-                        nav.style.gap = '28px';
+                        nav.style.gap = '32px';
                         nav.style.borderBottom = 'none';
                         nav.style.boxShadow = 'none';
                     } else {
-                        if (!nav.closest('.header-inner').querySelector('.menu-toggle')?.classList.contains(
-                            'open')) {
+                        if (!nav.classList.contains('mobile-open')) {
                             nav.style.display = 'none';
                         }
                     }
                 });
+            }
+
+            // ---- Відео-тизер (імітація) ----
+            const playBtn = document.querySelector('.play-btn');
+            if (playBtn) {
+                playBtn.addEventListener('click', function() {
+                    alert('🎬 Тут буде ваше брендоване відео або слайд-шоу.');
+                });
+            }
+
+            // ---- Підписка в футері ----
+            document.querySelector('.newsletter form').addEventListener('submit', function(e) {
+                e.preventDefault();
+                alert('🎉 Дякуємо за підписку! Перевірте email для отримання промокоду.');
+                this.reset();
             });
 
         });
