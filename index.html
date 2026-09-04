@@ -8,7 +8,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet" />
     <style>
-        /* ===== СКИДАННЯ ТА БАЗА ===== */
+        /* ===== БАЗА ===== */
         * {
             margin: 0;
             padding: 0;
@@ -34,7 +34,7 @@
             max-width: 100%;
         }
 
-        /* ===== HEADER (ЯК НА HAVE A REST) ===== */
+        /* ===== HEADER (повне меню) ===== */
         .site-header {
             background: #fff;
             border-bottom: 1px solid rgba(0, 0, 0, 0.04);
@@ -42,47 +42,52 @@
             position: sticky;
             top: 0;
             z-index: 1000;
+        }
+        .header-inner {
+            max-width: 1280px;
+            margin: 0 auto;
             display: flex;
             align-items: center;
             justify-content: space-between;
-            max-width: 1280px;
-            margin: 0 auto;
+            flex-wrap: wrap;
+            gap: 12px;
         }
-        .site-header .logo {
+        .header-inner .logo {
             font-family: 'Playfair Display', serif;
-            font-size: 1.6rem;
+            font-size: 1.8rem;
             font-weight: 700;
             color: #003057;
             letter-spacing: 2px;
         }
-        .site-header .logo span {
+        .header-inner .logo span {
             color: #d4a843;
         }
-        .site-header .nav {
+        .header-inner .nav {
             display: flex;
-            gap: 28px;
-            font-size: 0.85rem;
+            flex-wrap: wrap;
+            gap: 20px;
+            font-size: 0.8rem;
             font-weight: 500;
             letter-spacing: 0.5px;
         }
-        .site-header .nav a {
+        .header-inner .nav a {
             color: #1a1a1a;
             opacity: 0.7;
             transition: opacity 0.2s;
         }
-        .site-header .nav a:hover {
+        .header-inner .nav a:hover {
             opacity: 1;
         }
-        .site-header .actions {
+        .header-inner .actions {
             display: flex;
-            gap: 18px;
+            gap: 16px;
             font-size: 1.1rem;
         }
-        .site-header .actions a {
+        .header-inner .actions a {
             opacity: 0.6;
             transition: opacity 0.2s;
         }
-        .site-header .actions a:hover {
+        .header-inner .actions a:hover {
             opacity: 1;
         }
         .menu-toggle {
@@ -93,7 +98,26 @@
             cursor: pointer;
         }
 
-        /* ===== HERO (ЯК НА HAVE A REST) ===== */
+        /* ===== PROMO BAR ===== */
+        .promo-bar {
+            background: #003057;
+            color: #fff;
+            padding: 10px 20px;
+            text-align: center;
+            font-size: 0.85rem;
+            font-weight: 300;
+            letter-spacing: 0.5px;
+        }
+        .promo-bar span {
+            color: #d4a843;
+            font-weight: 600;
+        }
+        .promo-bar .sep {
+            margin: 0 16px;
+            opacity: 0.3;
+        }
+
+        /* ===== HERO ===== */
         .hero {
             padding: 60px 20px 80px;
             max-width: 1280px;
@@ -101,7 +125,7 @@
             display: flex;
             flex-wrap: wrap;
             align-items: center;
-            gap: 40px;
+            gap: 50px;
         }
         .hero .text {
             flex: 1 1 45%;
@@ -132,7 +156,7 @@
             max-width: 420px;
             margin-bottom: 28px;
         }
-        .hero .text .btn {
+        .btn {
             background: #003057;
             color: #fff;
             padding: 14px 44px;
@@ -146,210 +170,58 @@
             transition: all 0.3s;
             display: inline-block;
         }
-        .hero .text .btn:hover {
+        .btn:hover {
             background: #d4a843;
             color: #003057;
             transform: translateY(-2px);
         }
         .hero .image {
             flex: 1 1 45%;
-            min-height: 300px;
+            min-height: 350px;
             background: url('https://images.unsplash.com/photo-1598661659240-668b70a9c1e5?w=800&q=80') center/cover no-repeat;
             border-radius: 8px;
         }
 
-        /* ===== ФІШКИ (7 ШТУК, ЯК НА HAVE A REST) ===== */
-        .features {
+        /* ===== КАТАЛОГ (категорії) ===== */
+        .catalog {
             padding: 60px 20px;
             background: #f8f6f4;
             border-top: 1px solid #e8e4de;
             border-bottom: 1px solid #e8e4de;
         }
-        .features .grid {
+        .catalog .grid {
             max-width: 1280px;
             margin: 0 auto;
             display: grid;
-            grid-template-columns: repeat(7, 1fr);
+            grid-template-columns: repeat(5, 1fr);
             gap: 16px;
             text-align: center;
         }
-        .features .grid .item {
-            padding: 12px 8px;
+        .catalog .grid .item {
+            padding: 20px 12px;
+            background: #fff;
+            border-radius: 4px;
+            transition: all 0.3s;
+            cursor: pointer;
         }
-        .features .grid .item .icon {
-            font-size: 2.2rem;
-            display: block;
-            margin-bottom: 6px;
-            color: #d4a843;
+        .catalog .grid .item:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.02);
         }
-        .features .grid .item h4 {
-            font-size: 0.8rem;
-            font-weight: 600;
-            color: #003057;
-        }
-        .features .grid .item p {
-            font-size: 0.7rem;
-            color: #777;
-            font-weight: 300;
-        }
-
-        /* ===== ВІДЕО-БЛОК (ЯК НА HAVE A REST) ===== */
-        .video-block {
-            padding: 60px 20px;
-            max-width: 1280px;
-            margin: 0 auto;
-            text-align: center;
-        }
-        .video-block .video-wrapper {
-            background: #003057;
-            border-radius: 8px;
-            aspect-ratio: 16/9;
-            max-width: 900px;
-            margin: 0 auto 24px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            position: relative;
-            overflow: hidden;
-        }
-        .video-block .video-wrapper .play {
-            width: 80px;
-            height: 80px;
-            border-radius: 50%;
-            background: rgba(255, 255, 255, 0.15);
-            backdrop-filter: blur(4px);
-            border: 2px solid rgba(255, 255, 255, 0.2);
-            display: flex;
-            align-items: center;
-            justify-content: center;
+        .catalog .grid .item .icon {
             font-size: 2.4rem;
-            color: #fff;
-            cursor: pointer;
-            transition: all 0.3s;
-        }
-        .video-block .video-wrapper .play:hover {
-            background: #d4a843;
-            transform: scale(1.05);
-        }
-        .video-block h2 {
-            font-family: 'Playfair Display', serif;
-            font-size: clamp(2rem, 4vw, 3.4rem);
-            font-weight: 600;
-            color: #003057;
-        }
-        .video-block h2 span {
-            color: #d4a843;
-        }
-        .video-block p {
-            font-weight: 300;
-            color: #777;
-            margin-top: 8px;
-        }
-        .video-block .btn {
-            margin-top: 20px;
-            background: #003057;
-            color: #fff;
-            padding: 12px 40px;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 1.5px;
-            border: none;
-            border-radius: 2px;
-            font-size: 0.85rem;
-            cursor: pointer;
-            display: inline-block;
-            transition: all 0.3s;
-        }
-        .video-block .btn:hover {
-            background: #d4a843;
-            color: #003057;
-        }
-
-        /* ===== ГАРАНТІЯ (ЯК НА HAVE A REST) ===== */
-        .guarantee {
-            padding: 60px 20px;
-            background: #f8f6f4;
-            border-top: 1px solid #e8e4de;
-            border-bottom: 1px solid #e8e4de;
-            text-align: center;
-        }
-        .guarantee .icon {
-            font-size: 3.2rem;
             display: block;
             margin-bottom: 8px;
-            color: #d4a843;
         }
-        .guarantee h3 {
-            font-family: 'Playfair Display', serif;
-            font-size: 2rem;
+        .catalog .grid .item h4 {
+            font-size: 0.85rem;
             font-weight: 600;
             color: #003057;
-        }
-        .guarantee p {
-            font-weight: 300;
-            color: #555;
-            max-width: 500px;
-            margin: 8px auto 0;
         }
 
-        /* ===== ВІДГУКИ (КАРУСЕЛЬ, ЯК НА HAVE A REST) ===== */
-        .reviews {
-            padding: 60px 20px;
-            max-width: 1280px;
-            margin: 0 auto;
-        }
-        .reviews .title {
-            font-family: 'Playfair Display', serif;
-            font-size: 2.4rem;
-            font-weight: 600;
-            color: #003057;
-            text-align: center;
-            margin-bottom: 32px;
-        }
-        .reviews .title span {
-            color: #d4a843;
-        }
-        .reviews .grid {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 20px;
-        }
-        .reviews .grid .card {
-            background: #f8f6f4;
-            padding: 20px;
-            border-radius: 4px;
-            border-left: 3px solid #d4a843;
-        }
-        .reviews .grid .card .stars {
-            color: #d4a843;
-            letter-spacing: 2px;
-            font-size: 0.95rem;
-        }
-        .reviews .grid .card p {
-            font-weight: 300;
-            font-size: 0.95rem;
-            line-height: 1.5;
-            margin: 8px 0 12px;
-            color: #333;
-        }
-        .reviews .grid .card .author {
-            font-weight: 600;
-            color: #003057;
-            font-size: 0.9rem;
-        }
-        .reviews .grid .card .author span {
-            font-weight: 300;
-            color: #999;
-        }
-
-        /* ===== ПРО БРЕНД (ЯК НА HAVE A REST) ===== */
-        .about {
-            padding: 60px 20px;
-            background: #f8f6f4;
-            border-top: 1px solid #e8e4de;
-            border-bottom: 1px solid #e8e4de;
-        }
-        .about .inner {
+        /* ===== FEATURED ===== */
+        .featured {
+            padding: 80px 20px;
             max-width: 1280px;
             margin: 0 auto;
             display: flex;
@@ -357,59 +229,758 @@
             align-items: center;
             gap: 50px;
         }
-        .about .inner .text {
+        .featured .image {
+            flex: 1 1 45%;
+            min-height: 300px;
+            background: url('https://images.unsplash.com/photo-1544441893-675973e31985?w=800&q=80') center/cover no-repeat;
+            border-radius: 8px;
+        }
+        .featured .text {
             flex: 1 1 45%;
         }
-        .about .inner .text .label {
+        .featured .text .label {
             font-size: 0.7rem;
             font-weight: 600;
             letter-spacing: 4px;
             color: #d4a843;
             text-transform: uppercase;
         }
-        .about .inner .text h2 {
+        .featured .text h2 {
             font-family: 'Playfair Display', serif;
             font-size: 2.6rem;
             font-weight: 600;
             color: #003057;
             margin: 8px 0 16px;
         }
-        .about .inner .text h2 span {
+        .featured .text h2 span {
             color: #d4a843;
         }
-        .about .inner .text p {
+        .featured .text p {
             font-weight: 300;
             color: #555;
             line-height: 1.7;
             max-width: 460px;
         }
-        .about .inner .text .btn {
-            margin-top: 16px;
-            background: #003057;
-            color: #fff;
-            padding: 12px 36px;
+
+        /* ===== ПРОДУКТ У ДЕТАЛЯХ (як Have a Rest) ===== */
+        .product-details {
+            padding: 80px 20px;
+            background: #f8f6f4;
+            border-top: 1px solid #e8e4de;
+            border-bottom: 1px solid #e8e4de;
+        }
+        .product-details .inner {
+            max-width: 1280px;
+            margin: 0 auto;
+        }
+        .product-details .inner h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.6rem;
             font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 1.5px;
-            border: none;
-            border-radius: 2px;
-            font-size: 0.8rem;
-            cursor: pointer;
-            display: inline-block;
+            color: #003057;
+            text-align: center;
+            margin-bottom: 8px;
+        }
+        .product-details .inner h2 span {
+            color: #d4a843;
+        }
+        .product-details .inner .sub {
+            text-align: center;
+            font-weight: 300;
+            color: #777;
+            margin-bottom: 40px;
+        }
+        .product-details .grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+        }
+        .product-details .grid .item {
+            background: #fff;
+            padding: 30px 24px;
+            border-radius: 4px;
+            border-left: 3px solid #d4a843;
+            transition: transform 0.3s;
+        }
+        .product-details .grid .item:hover {
+            transform: translateY(-4px);
+        }
+        .product-details .grid .item .num {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.2rem;
+            font-weight: 700;
+            color: #d4a843;
+            opacity: 0.3;
+        }
+        .product-details .grid .item h4 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #003057;
+            margin: 4px 0 8px;
+        }
+        .product-details .grid .item p {
+            font-weight: 300;
+            color: #555;
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        /* ===== РОЗМІРИ ВАЛІЗ ===== */
+        .sizes {
+            padding: 60px 20px;
+            max-width: 1280px;
+            margin: 0 auto;
+        }
+        .sizes h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.4rem;
+            font-weight: 600;
+            color: #003057;
+            text-align: center;
+            margin-bottom: 8px;
+        }
+        .sizes h2 span {
+            color: #d4a843;
+        }
+        .sizes .sub {
+            text-align: center;
+            font-weight: 300;
+            color: #777;
+            margin-bottom: 32px;
+        }
+        .sizes .grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+        }
+        .sizes .grid .item {
+            text-align: center;
+            padding: 24px;
+            background: #f8f6f4;
+            border-radius: 4px;
             transition: all 0.3s;
         }
-        .about .inner .text .btn:hover {
-            background: #d4a843;
+        .sizes .grid .item:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.02);
+        }
+        .sizes .grid .item .icon {
+            font-size: 3rem;
+            display: block;
+            margin-bottom: 8px;
+        }
+        .sizes .grid .item h4 {
+            font-weight: 600;
+            color: #003057;
+            font-size: 1.4rem;
+        }
+        .sizes .grid .item p {
+            font-weight: 300;
+            color: #777;
+        }
+
+        /* ===== АКСЕСУАРИ ===== */
+        .accessories {
+            padding: 60px 20px;
+            background: #f8f6f4;
+            border-top: 1px solid #e8e4de;
+            border-bottom: 1px solid #e8e4de;
+        }
+        .accessories .inner {
+            max-width: 1280px;
+            margin: 0 auto;
+        }
+        .accessories .inner h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.4rem;
+            font-weight: 600;
+            color: #003057;
+            text-align: center;
+            margin-bottom: 8px;
+        }
+        .accessories .inner h2 span {
+            color: #d4a843;
+        }
+        .accessories .inner .sub {
+            text-align: center;
+            font-weight: 300;
+            color: #777;
+            margin-bottom: 32px;
+        }
+        .accessories .grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+        .accessories .grid .item {
+            background: #fff;
+            padding: 20px 16px;
+            border-radius: 4px;
+            text-align: center;
+            transition: transform 0.3s;
+        }
+        .accessories .grid .item:hover {
+            transform: translateY(-4px);
+        }
+        .accessories .grid .item .icon {
+            font-size: 2.6rem;
+            display: block;
+            margin-bottom: 8px;
+        }
+        .accessories .grid .item h4 {
+            font-weight: 600;
+            color: #003057;
+            font-size: 1rem;
+        }
+        .accessories .grid .item p {
+            font-weight: 300;
+            color: #777;
+            font-size: 0.85rem;
+        }
+
+        /* ===== КОЛЕКЦІЇ ===== */
+        .collections {
+            padding: 60px 20px;
+            max-width: 1280px;
+            margin: 0 auto;
+        }
+        .collections h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.4rem;
+            font-weight: 600;
+            color: #003057;
+            text-align: center;
+            margin-bottom: 8px;
+        }
+        .collections h2 span {
+            color: #d4a843;
+        }
+        .collections .sub {
+            text-align: center;
+            font-weight: 300;
+            color: #777;
+            margin-bottom: 32px;
+        }
+        .collections .grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+        }
+        .collections .grid .item {
+            border-radius: 4px;
+            overflow: hidden;
+            background: #f8f6f4;
+            transition: transform 0.3s;
+        }
+        .collections .grid .item:hover {
+            transform: translateY(-4px);
+        }
+        .collections .grid .item img {
+            width: 100%;
+            aspect-ratio: 4/3;
+            object-fit: cover;
+        }
+        .collections .grid .item .info {
+            padding: 16px 20px 20px;
+        }
+        .collections .grid .item .info h4 {
+            font-weight: 600;
+            color: #003057;
+            font-size: 1.2rem;
+        }
+        .collections .grid .item .info p {
+            font-weight: 300;
+            color: #555;
+            font-size: 0.9rem;
+            margin-top: 4px;
+        }
+
+        /* ===== PHOTO STORY ===== */
+        .photostory {
+            padding: 60px 20px;
+            background: #f8f6f4;
+            border-top: 1px solid #e8e4de;
+            border-bottom: 1px solid #e8e4de;
+        }
+        .photostory .inner {
+            max-width: 1280px;
+            margin: 0 auto;
+        }
+        .photostory .inner h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.4rem;
+            font-weight: 600;
+            color: #003057;
+            text-align: center;
+            margin-bottom: 8px;
+        }
+        .photostory .inner h2 span {
+            color: #d4a843;
+        }
+        .photostory .grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 12px;
+            margin-top: 24px;
+        }
+        .photostory .grid img {
+            width: 100%;
+            aspect-ratio: 1/1;
+            object-fit: cover;
+            border-radius: 4px;
+            transition: transform 0.3s;
+        }
+        .photostory .grid img:hover {
+            transform: scale(1.02);
+        }
+
+        /* ===== НОВИНКИ / BESTSELLERS / SALE ===== */
+        .products-block {
+            padding: 60px 20px;
+            max-width: 1280px;
+            margin: 0 auto;
+        }
+        .products-block h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.4rem;
+            font-weight: 600;
+            color: #003057;
+            text-align: center;
+            margin-bottom: 8px;
+        }
+        .products-block h2 span {
+            color: #d4a843;
+        }
+        .products-block .sub {
+            text-align: center;
+            font-weight: 300;
+            color: #777;
+            margin-bottom: 32px;
+        }
+        .products-block .grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+        .products-block .grid .item {
+            background: #fff;
+            border-radius: 4px;
+            overflow: hidden;
+            transition: transform 0.3s;
+            border: 1px solid rgba(0, 0, 0, 0.02);
+        }
+        .products-block .grid .item:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.02);
+        }
+        .products-block .grid .item img {
+            width: 100%;
+            aspect-ratio: 3/4;
+            object-fit: cover;
+        }
+        .products-block .grid .item .info {
+            padding: 16px 16px 20px;
+        }
+        .products-block .grid .item .info .tag {
+            font-size: 0.6rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: #d4a843;
+        }
+        .products-block .grid .item .info h4 {
+            font-weight: 600;
+            color: #003057;
+            font-size: 1rem;
+            margin: 4px 0 6px;
+        }
+        .products-block .grid .item .info .price {
+            font-weight: 700;
+            font-size: 1.1rem;
             color: #003057;
         }
-        .about .inner .image {
+        .products-block .grid .item .info .price del {
+            color: #bbb;
+            font-weight: 300;
+            margin-right: 8px;
+            font-size: 0.9rem;
+        }
+
+        .products-block .grid .item .info .sale-tag {
+            background: #c0392b;
+            color: #fff;
+            padding: 2px 12px;
+            border-radius: 20px;
+            font-size: 0.7rem;
+            font-weight: 600;
+            display: inline-block;
+            margin-top: 4px;
+        }
+
+        /* ===== ПРО БРЕНД (з виробництвом) ===== */
+        .about-brand {
+            padding: 80px 20px;
+            background: #f8f6f4;
+            border-top: 1px solid #e8e4de;
+            border-bottom: 1px solid #e8e4de;
+        }
+        .about-brand .inner {
+            max-width: 1280px;
+            margin: 0 auto;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 50px;
+        }
+        .about-brand .inner .text {
             flex: 1 1 45%;
-            min-height: 280px;
+        }
+        .about-brand .inner .text .label {
+            font-size: 0.7rem;
+            font-weight: 600;
+            letter-spacing: 4px;
+            color: #d4a843;
+            text-transform: uppercase;
+        }
+        .about-brand .inner .text h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.6rem;
+            font-weight: 600;
+            color: #003057;
+            margin: 8px 0 16px;
+        }
+        .about-brand .inner .text h2 span {
+            color: #d4a843;
+        }
+        .about-brand .inner .text p {
+            font-weight: 300;
+            color: #555;
+            line-height: 1.7;
+            max-width: 460px;
+        }
+        .about-brand .inner .image {
+            flex: 1 1 45%;
+            min-height: 300px;
             background: url('https://images.unsplash.com/photo-1601924971179-d6f38f24ce3d?w=800&q=80') center/cover no-repeat;
             border-radius: 4px;
         }
 
-        /* ===== FOOTER (ЯК НА HAVE A REST) ===== */
+        /* ===== ЯК МИ СТВОРЮЄМО ===== */
+        .process {
+            padding: 60px 20px;
+            max-width: 1280px;
+            margin: 0 auto;
+        }
+        .process h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.4rem;
+            font-weight: 600;
+            color: #003057;
+            text-align: center;
+            margin-bottom: 8px;
+        }
+        .process h2 span {
+            color: #d4a843;
+        }
+        .process .sub {
+            text-align: center;
+            font-weight: 300;
+            color: #777;
+            margin-bottom: 32px;
+        }
+        .process .grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+        .process .grid .item {
+            text-align: center;
+            padding: 24px 16px;
+            background: #f8f6f4;
+            border-radius: 4px;
+            transition: transform 0.3s;
+        }
+        .process .grid .item:hover {
+            transform: translateY(-4px);
+        }
+        .process .grid .item .num {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.6rem;
+            font-weight: 700;
+            color: #d4a843;
+            opacity: 0.3;
+        }
+        .process .grid .item h4 {
+            font-weight: 600;
+            color: #003057;
+            font-size: 1.1rem;
+            margin: 4px 0 8px;
+        }
+        .process .grid .item p {
+            font-weight: 300;
+            color: #555;
+            font-size: 0.9rem;
+        }
+
+        /* ===== ГАРАНТІЯ ===== */
+        .guarantee-block {
+            padding: 60px 20px;
+            background: #003057;
+            color: #fff;
+            text-align: center;
+        }
+        .guarantee-block .icon {
+            font-size: 3.6rem;
+            display: block;
+            margin-bottom: 8px;
+        }
+        .guarantee-block h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.4rem;
+            font-weight: 600;
+        }
+        .guarantee-block h2 span {
+            color: #d4a843;
+        }
+        .guarantee-block p {
+            font-weight: 300;
+            opacity: 0.8;
+            max-width: 500px;
+            margin: 8px auto 0;
+        }
+
+        /* ===== ДОСТАВКА / ОПЛАТА ===== */
+        .delivery {
+            padding: 60px 20px;
+            max-width: 1280px;
+            margin: 0 auto;
+        }
+        .delivery h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.4rem;
+            font-weight: 600;
+            color: #003057;
+            text-align: center;
+            margin-bottom: 8px;
+        }
+        .delivery h2 span {
+            color: #d4a843;
+        }
+        .delivery .grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+            margin-top: 32px;
+        }
+        .delivery .grid .item {
+            text-align: center;
+            padding: 24px;
+            background: #f8f6f4;
+            border-radius: 4px;
+        }
+        .delivery .grid .item .icon {
+            font-size: 2.6rem;
+            display: block;
+            margin-bottom: 8px;
+        }
+        .delivery .grid .item h4 {
+            font-weight: 600;
+            color: #003057;
+        }
+        .delivery .grid .item p {
+            font-weight: 300;
+            color: #555;
+            font-size: 0.9rem;
+        }
+
+        /* ===== FAQ ===== */
+        .faq {
+            padding: 60px 20px;
+            background: #f8f6f4;
+            border-top: 1px solid #e8e4de;
+            border-bottom: 1px solid #e8e4de;
+        }
+        .faq .inner {
+            max-width: 1280px;
+            margin: 0 auto;
+        }
+        .faq .inner h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.4rem;
+            font-weight: 600;
+            color: #003057;
+            text-align: center;
+            margin-bottom: 8px;
+        }
+        .faq .inner h2 span {
+            color: #d4a843;
+        }
+        .faq .grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+            margin-top: 24px;
+        }
+        .faq .grid .item {
+            background: #fff;
+            padding: 20px 24px;
+            border-radius: 4px;
+            border-left: 3px solid #d4a843;
+        }
+        .faq .grid .item h4 {
+            font-weight: 600;
+            color: #003057;
+            margin-bottom: 4px;
+        }
+        .faq .grid .item p {
+            font-weight: 300;
+            color: #555;
+            font-size: 0.9rem;
+        }
+
+        /* ===== ВІДГУКИ (великі) ===== */
+        .reviews-block {
+            padding: 60px 20px;
+            max-width: 1280px;
+            margin: 0 auto;
+        }
+        .reviews-block h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.4rem;
+            font-weight: 600;
+            color: #003057;
+            text-align: center;
+            margin-bottom: 8px;
+        }
+        .reviews-block h2 span {
+            color: #d4a843;
+        }
+        .reviews-block .grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+            margin-top: 32px;
+        }
+        .reviews-block .grid .item {
+            background: #f8f6f4;
+            padding: 24px;
+            border-radius: 4px;
+        }
+        .reviews-block .grid .item .stars {
+            color: #d4a843;
+            letter-spacing: 2px;
+            font-size: 1rem;
+        }
+        .reviews-block .grid .item p {
+            font-weight: 300;
+            font-size: 0.95rem;
+            line-height: 1.6;
+            margin: 8px 0 12px;
+            color: #333;
+        }
+        .reviews-block .grid .item .author {
+            font-weight: 600;
+            color: #003057;
+        }
+        .reviews-block .grid .item .author span {
+            font-weight: 300;
+            color: #999;
+        }
+
+        /* ===== SOCIAL / INSTAGRAM ===== */
+        .social-block {
+            padding: 60px 20px;
+            background: #f8f6f4;
+            border-top: 1px solid #e8e4de;
+            border-bottom: 1px solid #e8e4de;
+        }
+        .social-block .inner {
+            max-width: 1280px;
+            margin: 0 auto;
+        }
+        .social-block .inner h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.4rem;
+            font-weight: 600;
+            color: #003057;
+            text-align: center;
+            margin-bottom: 8px;
+        }
+        .social-block .inner h2 span {
+            color: #d4a843;
+        }
+        .social-block .grid {
+            display: grid;
+            grid-template-columns: repeat(6, 1fr);
+            gap: 8px;
+            margin-top: 24px;
+        }
+        .social-block .grid img {
+            width: 100%;
+            aspect-ratio: 1/1;
+            object-fit: cover;
+            border-radius: 4px;
+            transition: transform 0.3s;
+        }
+        .social-block .grid img:hover {
+            transform: scale(1.02);
+        }
+
+        /* ===== NEWSLETTER ===== */
+        .newsletter {
+            padding: 60px 20px;
+            max-width: 1280px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        .newsletter h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.4rem;
+            font-weight: 600;
+            color: #003057;
+        }
+        .newsletter h2 span {
+            color: #d4a843;
+        }
+        .newsletter p {
+            font-weight: 300;
+            color: #777;
+            margin: 8px 0 24px;
+        }
+        .newsletter form {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            flex-wrap: wrap;
+            max-width: 500px;
+            margin: 0 auto;
+        }
+        .newsletter form input {
+            flex: 1;
+            min-width: 200px;
+            padding: 12px 16px;
+            border: 1px solid #e0e0e0;
+            border-radius: 2px;
+            font-size: 0.95rem;
+        }
+        .newsletter form button {
+            background: #003057;
+            color: #fff;
+            border: none;
+            padding: 12px 32px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border-radius: 2px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        .newsletter form button:hover {
+            background: #d4a843;
+            color: #003057;
+        }
+
+        /* ===== FOOTER ===== */
         .site-footer {
             background: #003057;
             color: rgba(255, 255, 255, 0.7);
@@ -464,40 +1035,6 @@
         .footer-inner .col .social a:hover {
             opacity: 1;
         }
-        .footer-inner .col form {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 8px;
-        }
-        .footer-inner .col form input {
-            flex: 1;
-            min-width: 140px;
-            padding: 10px 14px;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: 2px;
-            background: rgba(255, 255, 255, 0.04);
-            color: #fff;
-            font-size: 0.9rem;
-        }
-        .footer-inner .col form input::placeholder {
-            color: rgba(255, 255, 255, 0.2);
-        }
-        .footer-inner .col form button {
-            background: #d4a843;
-            color: #003057;
-            border: none;
-            padding: 10px 20px;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            border-radius: 2px;
-            cursor: pointer;
-            font-size: 0.75rem;
-            transition: background 0.3s;
-        }
-        .footer-inner .col form button:hover {
-            background: #e8c35a;
-        }
         .footer-bottom {
             max-width: 1280px;
             margin: 30px auto 0;
@@ -519,12 +1056,27 @@
             color: #d4a843;
         }
 
-        /* ===== АДАПТИВ (ТОЧНО ЯК НА HAVE A REST) ===== */
+        /* ===== АДАПТИВ ===== */
         @media (max-width: 1024px) {
-            .features .grid {
-                grid-template-columns: repeat(4, 1fr);
+            .catalog .grid {
+                grid-template-columns: repeat(3, 1fr);
             }
-            .reviews .grid {
+            .product-details .grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .products-block .grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .collections .grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .photostory .grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .social-block .grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+            .reviews-block .grid {
                 grid-template-columns: repeat(2, 1fr);
             }
             .footer-inner {
@@ -533,7 +1085,7 @@
         }
 
         @media (max-width: 820px) {
-            .site-header .nav {
+            .header-inner .nav {
                 display: none;
             }
             .menu-toggle {
@@ -541,28 +1093,39 @@
             }
             .hero {
                 flex-direction: column;
-                padding: 40px 20px 60px;
             }
-            .hero .image {
-                width: 100%;
-                min-height: 250px;
+            .catalog .grid {
+                grid-template-columns: repeat(2, 1fr);
             }
-            .features .grid {
-                grid-template-columns: repeat(3, 1fr);
-            }
-            .reviews .grid {
+            .product-details .grid {
                 grid-template-columns: 1fr;
             }
-            .about .inner {
-                flex-direction: column;
+            .sizes .grid {
+                grid-template-columns: 1fr;
             }
-            .about .inner .image {
-                width: 100%;
-                min-height: 200px;
+            .accessories .grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .collections .grid {
+                grid-template-columns: 1fr;
+            }
+            .process .grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .delivery .grid {
+                grid-template-columns: 1fr;
+            }
+            .faq .grid {
+                grid-template-columns: 1fr;
+            }
+            .reviews-block .grid {
+                grid-template-columns: 1fr;
+            }
+            .products-block .grid {
+                grid-template-columns: 1fr;
             }
             .footer-inner {
                 grid-template-columns: 1fr;
-                gap: 32px;
             }
             .footer-bottom {
                 flex-direction: column;
@@ -572,62 +1135,92 @@
             .footer-bottom a {
                 margin: 0 10px;
             }
+            .photostory .grid {
+                grid-template-columns: 1fr 1fr;
+            }
+            .social-block .grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
         }
 
         @media (max-width: 600px) {
-            .features .grid {
-                grid-template-columns: repeat(2, 1fr);
+            .catalog .grid {
+                grid-template-columns: 1fr 1fr;
             }
-            .site-header .logo {
-                font-size: 1.3rem;
+            .accessories .grid {
+                grid-template-columns: 1fr 1fr;
+            }
+            .process .grid {
+                grid-template-columns: 1fr;
+            }
+            .photostory .grid {
+                grid-template-columns: 1fr;
+            }
+            .social-block .grid {
+                grid-template-columns: 1fr 1fr;
             }
             .hero .text h1 {
                 font-size: 2.2rem;
             }
-            .hero .text .btn {
+            .featured .text h2 {
+                font-size: 2rem;
+            }
+            .product-details .inner h2 {
+                font-size: 2rem;
+            }
+            .about-brand .inner .text h2 {
+                font-size: 2rem;
+            }
+            .btn {
                 padding: 12px 28px;
                 font-size: 0.75rem;
             }
-            .guarantee h3 {
-                font-size: 1.5rem;
+            .promo-bar {
+                font-size: 0.75rem;
+                padding: 8px 16px;
             }
-            .reviews .title {
-                font-size: 1.8rem;
-            }
-            .about .inner .text h2 {
-                font-size: 2rem;
-            }
-            .video-block .video-wrapper .play {
-                width: 56px;
-                height: 56px;
-                font-size: 1.6rem;
-            }
-            .footer-inner .col form input {
-                min-width: 100px;
+            .promo-bar .sep {
+                margin: 0 8px;
             }
         }
     </style>
 </head>
 <body>
 
-    <!-- ===== HEADER (ТОЧНО ЯК НА HAVE A REST) ===== -->
+    <!-- ===== HEADER ===== -->
     <header class="site-header">
-        <div class="logo">VIP<span>.</span></div>
-        <button class="menu-toggle">☰</button>
-        <nav class="nav">
-            <a href="#">Колекції</a>
-            <a href="#">Про бренд</a>
-            <a href="#">Магазини</a>
-            <a href="#">Контакти</a>
-        </nav>
-        <div class="actions">
-            <a href="#">⌕</a>
-            <a href="#">♡</a>
-            <a href="#">🛒</a>
+        <div class="header-inner">
+            <div class="logo">VIP<span>.</span></div>
+            <button class="menu-toggle">☰</button>
+            <nav class="nav">
+                <a href="#">Каталог</a>
+                <a href="#">Колекції</a>
+                <a href="#">Новинки</a>
+                <a href="#">Sale</a>
+                <a href="#">Про нас</a>
+                <a href="#">Доставка</a>
+                <a href="#">Гарантія</a>
+                <a href="#">FAQ</a>
+                <a href="#">Контакти</a>
+            </nav>
+            <div class="actions">
+                <a href="#">⌕</a>
+                <a href="#">♡</a>
+                <a href="#">🛒</a>
+            </div>
         </div>
     </header>
 
-    <!-- ===== HERO (ТОЧНО ЯК НА HAVE A REST) ===== -->
+    <!-- ===== PROMO BAR ===== -->
+    <div class="promo-bar">
+        <span>🚚 Безкоштовна доставка</span>
+        <span class="sep">|</span>
+        <span>✨ Акція: -20% на першу покупку</span>
+        <span class="sep">|</span>
+        <span>🛡️ Гарантія 365 днів</span>
+    </div>
+
+    <!-- ===== HERO ===== -->
     <section class="hero">
         <div class="text">
             <div class="badge">Колекція 2026</div>
@@ -638,105 +1231,299 @@
         <div class="image"></div>
     </section>
 
-    <!-- ===== 7 ФІШОК (ТОЧНО ЯК НА HAVE A REST) ===== -->
-    <section class="features">
+    <!-- ===== КАТАЛОГ ===== -->
+    <section class="catalog">
+        <div class="grid">
+            <div class="item"><span class="icon">🧳</span><h4>Валізи</h4></div>
+            <div class="item"><span class="icon">👜</span><h4>Сумки</h4></div>
+            <div class="item"><span class="icon">🎒</span><h4>Рюкзаки</h4></div>
+            <div class="item"><span class="icon">👛</span><h4>Галантерея</h4></div>
+            <div class="item"><span class="icon">🧴</span><h4>Аксесуари</h4></div>
+        </div>
+    </section>
+
+    <!-- ===== FEATURED ===== -->
+    <section class="featured">
+        <div class="image"></div>
+        <div class="text">
+            <div class="label">Основна колекція</div>
+            <h2>Шкіряна <span>класика</span></h2>
+            <p>Колекція, яка ніколи не виходить з моди. Натуральна шкіра, бездоганні лінії та увага до кожної деталі.</p>
+            <a href="#" class="btn" style="margin-top:16px;">Детальніше</a>
+        </div>
+    </section>
+
+    <!-- ===== ПРОДУКТ У ДЕТАЛЯХ ===== -->
+    <section class="product-details">
+        <div class="inner">
+            <h2>Деталі <span>продукту</span></h2>
+            <p class="sub">Кожна особливість, яка робить VIP Collection унікальним</p>
+            <div class="grid">
+                <div class="item"><div class="num">01</div><h4>Матеріал</h4><p>Натуральна шкіра найвищої якості, яка з часом стає ще красивішою.</p></div>
+                <div class="item"><div class="num">02</div><h4>Фурнітура</h4><p>Італійська металева фурнітура, стійка до зношування та корозії.</p></div>
+                <div class="item"><div class="num">03</div><h4>Відділення</h4><p>Продумана внутрішня організація для зручного зберігання речей.</p></div>
+                <div class="item"><div class="num">04</div><h4>Замок</h4><p>Вбудований кодовий замок TSA для захисту вашого багажу.</p></div>
+                <div class="item"><div class="num">05</div><h4>Ручки</h4><p>Ергономічні ручки з натуральної шкіри для комфортного перенесення.</p></div>
+                <div class="item"><div class="num">06</div><h4>Колеса</h4><p>Безшумні колеса з поворотом на 360° для легкої маневреності.</p></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== РОЗМІРИ ВАЛІЗ ===== -->
+    <section class="sizes">
+        <h2>Валізи за <span>розміром</span></h2>
+        <p class="sub">Оберіть ідеальний розмір для вашої подорожі</p>
+        <div class="grid">
+            <div class="item"><span class="icon">🧳</span><h4>S / Cabin</h4><p>Ручна поклажа до 55 см</p></div>
+            <div class="item"><span class="icon">🧳</span><h4>M / Medium</h4><p>Оптимальний для 3-7 днів</p></div>
+            <div class="item"><span class="icon">🧳</span><h4>L / Large</h4><p>Для тривалих подорожей 7+ днів</p></div>
+        </div>
+    </section>
+
+    <!-- ===== АКСЕСУАРИ ДЛЯ ПОДОРОЖІ ===== -->
+    <section class="accessories">
+        <div class="inner">
+            <h2>Аксесуари для <span>подорожей</span></h2>
+            <p class="sub">Все необхідне для комфортної подорожі</p>
+            <div class="grid">
+                <div class="item"><span class="icon">🛍️</span><h4>Дорожні сумки</h4><p>Місткі та стильні</p></div>
+                <div class="item"><span class="icon">🎒</span><h4>Рюкзаки</h4><p>Для міста та подорожей</p></div>
+                <div class="item"><span class="icon">📁</span><h4>Чохли</h4><p>Для документів та ноутбука</p></div>
+                <div class="item"><span class="icon">📂</span><h4>Органайзери</h4><p>Для речей та косметики</p></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== КОЛЕКЦІЇ ===== -->
+    <section class="collections">
+        <h2>Наші <span>колекції</span></h2>
+        <p class="sub">Кожна колекція — це окрема історія</p>
         <div class="grid">
             <div class="item">
-                <span class="icon">🧵</span>
-                <h4>Натуральна шкіра</h4>
-                <p>Матеріал, який живе роками</p>
+                <img src="https://images.unsplash.com/photo-1544441893-675973e31985?w=400&q=80" alt="Колекція">
+                <div class="info"><h4>Classic Leather</h4><p>Вічна класика з натуральної шкіри. 2025</p></div>
             </div>
             <div class="item">
-                <span class="icon">✋</span>
-                <h4>Ручна робота</h4>
-                <p>Кожен виріб створюється майстром</p>
+                <img src="https://images.unsplash.com/photo-1607552384479-9f2f21dd4d78?w=400&q=80" alt="Колекція">
+                <div class="info"><h4>Travel Collection</h4><p>Спеціальна колекція для подорожей. 2026</p></div>
             </div>
             <div class="item">
-                <span class="icon">🔩</span>
-                <h4>Міцна фурнітура</h4>
-                <p>Італійські комплектуючі</p>
-            </div>
-            <div class="item">
-                <span class="icon">🔒</span>
-                <h4>Вбудований замок</h4>
-                <p>TSA з функцією захисту</p>
-            </div>
-            <div class="item">
-                <span class="icon">📂</span>
-                <h4>Органайзер</h4>
-                <p>Продуманий простір</p>
-            </div>
-            <div class="item">
-                <span class="icon">🛡️</span>
-                <h4>Гарантія 365 днів</h4>
-                <p>Заміна або повернення</p>
-            </div>
-            <div class="item">
-                <span class="icon">🎁</span>
-                <h4>Подарункова упаковка</h4>
-                <p>Дбаємо про враження</p>
+                <img src="https://images.unsplash.com/photo-1566150905458-1bf1fc113f0d?w=400&q=80" alt="Колекція">
+                <div class="info"><h4>Business Line</h4><p>Елегантні аксесуари для ділових людей. 2026</p></div>
             </div>
         </div>
     </section>
 
-    <!-- ===== ВІДЕО-БЛОК (ТОЧНО ЯК НА HAVE A REST) ===== -->
-    <section class="video-block">
-        <div class="video-wrapper">
-            <div class="play">▶</div>
+    <!-- ===== PHOTO STORY ===== -->
+    <section class="photostory">
+        <div class="inner">
+            <h2>VIP Collection <span>в житті</span></h2>
+            <div class="grid">
+                <img src="https://images.unsplash.com/photo-1544441893-675973e31985?w=400&q=80" alt="Фото 1">
+                <img src="https://images.unsplash.com/photo-1607552384479-9f2f21dd4d78?w=400&q=80" alt="Фото 2">
+                <img src="https://images.unsplash.com/photo-1566150905458-1bf1fc113f0d?w=400&q=80" alt="Фото 3">
+                <img src="https://images.unsplash.com/photo-1601924971179-d6f38f24ce3d?w=400&q=80" alt="Фото 4">
+            </div>
         </div>
-        <h2>WILL YOU <span>CHOOSE</span> VIP?</h2>
-        <p>Кожен виріб — це історія, яку ви створюєте разом з нами.</p>
-        <a href="#" class="btn">Обрати валізу</a>
     </section>
 
-    <!-- ===== ГАРАНТІЯ (ТОЧНО ЯК НА HAVE A REST) ===== -->
-    <section class="guarantee">
-        <span class="icon">🛡️</span>
-        <h3>Гарантія якості — 365 днів</h3>
-        <p>При пошкодженні валізи — ми обміняємо її на нову або повернемо кошти.</p>
-    </section>
-
-    <!-- ===== ВІДГУКИ (ТОЧНО ЯК НА HAVE A REST) ===== -->
-    <section class="reviews">
-        <h2 class="title">Відгуки <span>наших клієнтів</span></h2>
+    <!-- ===== НОВИНКИ ===== -->
+    <section class="products-block">
+        <h2>Новинки <span>2026</span></h2>
+        <p class="sub">Свіжі моделі, які вже доступні</p>
         <div class="grid">
-            <div class="card">
-                <div class="stars">★★★★★</div>
-                <p>"Найкраща шкіряна сумка, яку я мала. Якість неймовірна, а дизайн — вічна класика."</p>
-                <div class="author">Олена <span>— Сумка Tote</span></div>
+            <div class="item">
+                <img src="https://images.unsplash.com/photo-1607552384479-9f2f21dd4d78?w=400&q=80" alt="Новинка">
+                <div class="info"><div class="tag">NEW</div><h4>Валіза 55 см</h4><div class="price">4 290 ₴</div></div>
             </div>
-            <div class="card">
-                <div class="stars">★★★★★</div>
-                <p>"Валіза витримала 8 перельотів за місяць — жодної подряпини. Дуже задоволений!"</p>
-                <div class="author">Андрій <span>— Валіза 75 см</span></div>
+            <div class="item">
+                <img src="https://images.unsplash.com/photo-1566150905458-1bf1fc113f0d?w=400&q=80" alt="Новинка">
+                <div class="info"><div class="tag">NEW</div><h4>Сумка Tote</h4><div class="price">4 890 ₴</div></div>
             </div>
-            <div class="card">
-                <div class="stars">★★★★★</div>
-                <p>"Гаманець з натуральної шкіри — це щось неймовірне. М'який, приємний на дотик."</p>
-                <div class="author">Марія <span>— Гаманець</span></div>
+            <div class="item">
+                <img src="https://images.unsplash.com/photo-1601924971179-d6f38f24ce3d?w=400&q=80" alt="Новинка">
+                <div class="info"><div class="tag">NEW</div><h4>Гаманець</h4><div class="price">1 290 ₴</div></div>
             </div>
-            <div class="card">
-                <div class="stars">★★★★★</div>
-                <p>"Рюкзак для ноутбука — ідеальний супутник для відряджень. Все продумано до дрібниць."</p>
-                <div class="author">Ігор <span>— Рюкзак Business</span></div>
+            <div class="item">
+                <img src="https://images.unsplash.com/photo-1584917865442-de89df76afd3?w=400&q=80" alt="Новинка">
+                <div class="info"><div class="tag">NEW</div><h4>Рюкзак City</h4><div class="price">5 690 ₴</div></div>
             </div>
         </div>
     </section>
 
-    <!-- ===== ПРО БРЕНД (ТОЧНО ЯК НА HAVE A REST) ===== -->
-    <section class="about">
+    <!-- ===== BESTSELLERS ===== -->
+    <section class="products-block" style="background:#f8f6f4; padding:60px 20px; max-width:100%;">
+        <div style="max-width:1280px; margin:0 auto;">
+            <h2>Хіти <span>продажів</span></h2>
+            <p class="sub">Найпопулярніші моделі серед наших клієнтів</p>
+            <div class="grid">
+                <div class="item">
+                    <img src="https://images.unsplash.com/photo-1544441893-675973e31985?w=400&q=80" alt="Хіт">
+                    <div class="info"><h4>Валіза 75 см</h4><div class="price">6 990 ₴</div></div>
+                </div>
+                <div class="item">
+                    <img src="https://images.unsplash.com/photo-1601758063897-1d9b4e4f13c0?w=400&q=80" alt="Хіт">
+                    <div class="info"><h4>Портмоне</h4><div class="price">890 ₴</div></div>
+                </div>
+                <div class="item">
+                    <img src="https://images.unsplash.com/photo-1559588358-2f9bd1d49c22?w=400&q=80" alt="Хіт">
+                    <div class="info"><h4>Валіза ручна</h4><div class="price">3 990 ₴</div></div>
+                </div>
+                <div class="item">
+                    <img src="https://images.unsplash.com/photo-1566150905458-1bf1fc113f0d?w=400&q=80" alt="Хіт">
+                    <div class="info"><h4>Сумка Crossbody</h4><div class="price">3 890 ₴</div></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== SALE ===== -->
+    <section class="products-block">
+        <h2>Розпродаж <span>🔥</span></h2>
+        <p class="sub">Спеціальні ціни на вибрані моделі</p>
+        <div class="grid">
+            <div class="item">
+                <img src="https://images.unsplash.com/photo-1559588358-2f9bd1d49c22?w=400&q=80" alt="Sale">
+                <div class="info">
+                    <div class="tag">SALE</div>
+                    <h4>Валіза 55 см</h4>
+                    <div class="price"><del>4 290 ₴</del> 3 432 ₴</div>
+                    <div class="sale-tag">-20%</div>
+                </div>
+            </div>
+            <div class="item">
+                <img src="https://images.unsplash.com/photo-1601758063897-1d9b4e4f13c0?w=400&q=80" alt="Sale">
+                <div class="info">
+                    <div class="tag">SALE</div>
+                    <h4>Портмоне</h4>
+                    <div class="price"><del>890 ₴</del> 712 ₴</div>
+                    <div class="sale-tag">-20%</div>
+                </div>
+            </div>
+            <div class="item">
+                <img src="https://images.unsplash.com/photo-1566150905458-1bf1fc113f0d?w=400&q=80" alt="Sale">
+                <div class="info">
+                    <div class="tag">SALE</div>
+                    <h4>Сумка Tote</h4>
+                    <div class="price"><del>4 890 ₴</del> 3 912 ₴</div>
+                    <div class="sale-tag">-20%</div>
+                </div>
+            </div>
+            <div class="item">
+                <img src="https://images.unsplash.com/photo-1601924971179-d6f38f24ce3d?w=400&q=80" alt="Sale">
+                <div class="info">
+                    <div class="tag">SALE</div>
+                    <h4>Гаманець</h4>
+                    <div class="price"><del>1 290 ₴</del> 1 032 ₴</div>
+                    <div class="sale-tag">-20%</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== ПРО VIP COLLECTION ===== -->
+    <section class="about-brand">
         <div class="inner">
             <div class="text">
                 <div class="label">Про VIP Collection</div>
                 <h2>Спадщина <span>якості</span></h2>
                 <p>VIP Collection — це преміальна шкіргалантерея та travel-аксесуари. Кожен виріб створюється з любов'ю до деталей та турботою про ваш комфорт. Ми використовуємо тільки натуральну шкіру та найкращу фурнітуру.</p>
-                <a href="#" class="btn">Дізнатися більше</a>
+                <a href="#" class="btn" style="margin-top:16px;">Дізнатися більше</a>
             </div>
             <div class="image"></div>
         </div>
     </section>
 
-    <!-- ===== FOOTER (ТОЧНО ЯК НА HAVE A REST) ===== -->
+    <!-- ===== ЯК МИ СТВОРЮЄМО ===== -->
+    <section class="process">
+        <h2>Як ми <span>створюємо</span></h2>
+        <p class="sub">Від ідеї до готового виробу</p>
+        <div class="grid">
+            <div class="item"><div class="num">01</div><h4>Матеріали</h4><p>Обираємо найкращу шкіру</p></div>
+            <div class="item"><div class="num">02</div><h4>Дизайн</h4><p>Створюємо ескізи та прототипи</p></div>
+            <div class="item"><div class="num">03</div><h4>Виробництво</h4><p>Ручна робота майстрів</p></div>
+            <div class="item"><div class="num">04</div><h4>Готовий виріб</h4><p>Контроль якості та упаковка</p></div>
+        </div>
+    </section>
+
+    <!-- ===== ГАРАНТІЯ ===== -->
+    <section class="guarantee-block">
+        <span class="icon">🛡️</span>
+        <h2>Гарантія <span>якості</span></h2>
+        <p>365 днів гарантії на всі вироби VIP Collection. При пошкодженні — ми обміняємо або повернемо кошти.</p>
+    </section>
+
+    <!-- ===== ДОСТАВКА / ОПЛАТА ===== -->
+    <section class="delivery">
+        <h2>Доставка <span>та оплата</span></h2>
+        <div class="grid">
+            <div class="item"><span class="icon">🚚</span><h4>Швидка доставка</h4><p>По всій Україні 1-3 дні</p></div>
+            <div class="item"><span class="icon">💳</span><h4>Безпечна оплата</h4><p>Онлайн або при отриманні</p></div>
+            <div class="item"><span class="icon">↩️</span><h4>Зручне повернення</h4><p>14 днів на повернення</p></div>
+        </div>
+    </section>
+
+    <!-- ===== FAQ ===== -->
+    <section class="faq">
+        <div class="inner">
+            <h2>Часті <span>питання</span></h2>
+            <div class="grid">
+                <div class="item"><h4>Як обрати розмір валізи?</h4><p>Залежить від тривалості подорожі: S — до 3 днів, M — 3-7 днів, L — 7+ днів.</p></div>
+                <div class="item"><h4>Чи є гарантія на вироби?</h4><p>Так, ми надаємо гарантію 365 днів на всі вироби VIP Collection.</p></div>
+                <div class="item"><h4>Як доглядати за шкірою?</h4><p>Використовуйте спеціальні засоби для догляду за натуральною шкірою.</p></div>
+                <div class="item"><h4>Чи можна повернути товар?</h4><p>Так, протягом 14 днів з моменту отримання замовлення.</p></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== ВІДГУКИ (великі) ===== -->
+    <section class="reviews-block">
+        <h2>Відгуки <span>наших клієнтів</span></h2>
+        <div class="grid">
+            <div class="item">
+                <div class="stars">★★★★★</div>
+                <p>"Найкраща шкіряна сумка, яку я мала. Якість неймовірна, а дизайн — вічна класика. Ношу її вже півроку, виглядає як нова."</p>
+                <div class="author">Олена <span>— Сумка Tote</span></div>
+            </div>
+            <div class="item">
+                <div class="stars">★★★★★</div>
+                <p>"Валіза витримала 8 перельотів за місяць — жодної подряпини. Дуже задоволений якістю та маневреністю коліс. Рекомендую!"</p>
+                <div class="author">Андрій <span>— Валіза 75 см</span></div>
+            </div>
+            <div class="item">
+                <div class="stars">★★★★★</div>
+                <p>"Гаманець з натуральної шкіри — це щось неймовірне. М'який, приємний на дотик. Отримала в подарунок, тепер хочу всю колекцію."</p>
+                <div class="author">Марія <span>— Гаманець</span></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== SOCIAL / INSTAGRAM ===== -->
+    <section class="social-block">
+        <div class="inner">
+            <h2>VIP <span>в Instagram</span></h2>
+            <div class="grid">
+                <img src="https://images.unsplash.com/photo-1544441893-675973e31985?w=300&q=80" alt="IG 1">
+                <img src="https://images.unsplash.com/photo-1607552384479-9f2f21dd4d78?w=300&q=80" alt="IG 2">
+                <img src="https://images.unsplash.com/photo-1566150905458-1bf1fc113f0d?w=300&q=80" alt="IG 3">
+                <img src="https://images.unsplash.com/photo-1601924971179-d6f38f24ce3d?w=300&q=80" alt="IG 4">
+                <img src="https://images.unsplash.com/photo-1559588358-2f9bd1d49c22?w=300&q=80" alt="IG 5">
+                <img src="https://images.unsplash.com/photo-1584917865442-de89df76afd3?w=300&q=80" alt="IG 6">
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== NEWSLETTER ===== -->
+    <section class="newsletter">
+        <h2>Підпишіться <span>на новини</span></h2>
+        <p>Отримуйте інформацію про новинки та спеціальні пропозиції</p>
+        <form>
+            <input type="email" placeholder="Ваш email" required />
+            <button type="submit">Підписатися</button>
+        </form>
+    </section>
+
+    <!-- ===== FOOTER ===== -->
     <footer class="site-footer">
         <div class="footer-inner">
             <div class="col">
@@ -749,25 +1536,26 @@
                 </div>
             </div>
             <div class="col">
-                <h4>Меню</h4>
-                <a href="#">Колекції</a><br />
-                <a href="#">Про бренд</a><br />
-                <a href="#">Магазини</a><br />
-                <a href="#">Контакти</a>
+                <h4>Каталог</h4>
+                <a href="#">Валізи</a><br />
+                <a href="#">Сумки</a><br />
+                <a href="#">Рюкзаки</a><br />
+                <a href="#">Галантерея</a><br />
+                <a href="#">Аксесуари</a>
+            </div>
+            <div class="col">
+                <h4>Покупцям</h4>
+                <a href="#">Доставка</a><br />
+                <a href="#">Оплата</a><br />
+                <a href="#">Повернення</a><br />
+                <a href="#">Гарантія</a><br />
+                <a href="#">FAQ</a>
             </div>
             <div class="col">
                 <h4>Контакти</h4>
                 <p>+38 (044) 123-45-67</p>
                 <p>info@vip.ua</p>
                 <p>Пн–Пт: 10:00 – 20:00</p>
-            </div>
-            <div class="col">
-                <h4>Підписка</h4>
-                <p>Отримайте знижку -10% на першу покупку</p>
-                <form>
-                    <input type="email" placeholder="Ваш email" required />
-                    <button type="submit">Підписатися</button>
-                </form>
             </div>
         </div>
         <div class="footer-bottom">
@@ -785,7 +1573,7 @@
 
             // ---- Мобільне меню ----
             const toggle = document.querySelector('.menu-toggle');
-            const nav = document.querySelector('.site-header .nav');
+            const nav = document.querySelector('.header-inner .nav');
             if (toggle && nav) {
                 toggle.addEventListener('click', function() {
                     if (nav.style.display === 'flex') {
@@ -799,7 +1587,7 @@
                         nav.style.width = '100%';
                         nav.style.background = '#fff';
                         nav.style.padding = '20px 24px';
-                        nav.style.gap = '12px';
+                        nav.style.gap = '10px';
                         nav.style.borderBottom = '1px solid #e8e4de';
                         nav.style.boxShadow = '0 20px 40px rgba(0,0,0,0.02)';
                         nav.style.zIndex = '999';
@@ -818,7 +1606,7 @@
                         nav.style.width = 'auto';
                         nav.style.background = 'transparent';
                         nav.style.padding = '0';
-                        nav.style.gap = '28px';
+                        nav.style.gap = '20px';
                         nav.style.borderBottom = 'none';
                         nav.style.boxShadow = 'none';
                     } else {
@@ -829,16 +1617,19 @@
                 });
             }
 
-            // ---- Відео ----
-            document.querySelector('.play').addEventListener('click', function() {
-                alert('🎬слайд-шоу.');
-            });
-
             // ---- Підписка ----
-            document.querySelector('.footer-inner form').addEventListener('submit', function(e) {
+            document.querySelector('.newsletter form').addEventListener('submit', function(e) {
                 e.preventDefault();
                 alert('🎉 Дякуємо за підписку! Перевірте email для отримання промокоду.');
                 this.reset();
+            });
+
+            // ---- Всі кнопки "Детальніше" ----
+            document.querySelectorAll('.btn').forEach(btn => {
+                btn.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    alert('🔗 Тут буде перехід на відповідну сторінку');
+                });
             });
 
         });
